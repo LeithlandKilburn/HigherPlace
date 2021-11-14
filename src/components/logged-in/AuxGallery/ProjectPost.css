@@ -1,0 +1,86 @@
+.Title 
+{
+    margin-top: 5px;
+}
+
+.projectPost 
+{
+    display: grid;
+    place-items: center;
+}
+
+#projCard
+{
+    width: 150px;
+    display: 'inline-block';
+}
+
+.media
+{
+    height: 225px;
+}
+
+.ProjectTitle 
+{
+    margin-top: 5px;
+    width: 130px;
+    display: grid;
+    place-items: center;
+    border-radius: 2px;
+    box-shadow: 1px 1px 5px #000;
+}
+
+/* Media Queries *//* Media Queries *//* Media Queries */
+/* Media Queries *//* Media Queries *//* Media Queries */
+
+@media screen and (min-width: 635px)
+{
+    .projectPost
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        column-gap: 2vw;
+        height: 40vh;
+        width: 50%;
+    }
+
+    #projCard
+    {
+        height: 100%;
+        width: 100%;
+        border-radius: 2px;
+    }
+
+    .media
+    {
+        height: 40vh;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1025px)
+{
+    .projectPost
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        column-gap: 2vw;
+        height: 40vh;
+        width: 25%;
+    }
+
+    #projCard
+    {
+        height: 40vh;
+        width: 15vw;
+        border-radius: 2px;
+    }
+
+    .media
+    {
+        height: 40vh;
+        width: 100%;
+    }
+}

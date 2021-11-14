@@ -1,0 +1,16 @@
+.primary {
+    color: red;
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+
+.finish {
+    position: absolute;
+    width: 80%;
+    top: 50px;
+    left: 10%;
+}

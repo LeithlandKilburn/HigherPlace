@@ -1,0 +1,131 @@
+.MsgTabs 
+{
+	margin-top: 50px;
+}
+
+.Chat
+{
+	background-color: #f6f6f6;
+	height: 86vh;
+	margin-top: 58px;
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: 1fr 8fr 1fr;
+}
+
+.ChatHeader
+{
+	background-color: #f6f6f6;
+	border-bottom: 2px solid #aaa;
+	display: grid;
+	grid-template-columns: 1fr 1fr 4fr;
+	align-content: center;
+}
+
+.CHIcons
+{
+	margin-left: 5px;
+}
+
+.ChatBody
+{
+	background-color: #f6f6f6;
+	overflow: scroll;
+	border-bottom: 2px solid #9f9f9f;
+	padding-top: 15px;
+}
+
+.ChatTextCont
+{
+	margin-left: 10px;
+	margin-right: 10px;
+	width: fit-content;
+	padding: 10px;
+	background-color: #622;
+	font-size: 16px;
+	border-radius: 10px;
+	margin-bottom: 30px;
+}
+
+.Receiver
+{
+	margin-left: auto;
+	margin-right: 10px;
+	width: fit-content;
+	padding: 10px;
+	background-color: #262;
+	font-size: 16px;
+	border-radius: 10px;
+	margin-bottom: 30px;
+}
+
+.ChatText 
+{
+	color: #fff;
+}
+
+.ChatFooter 
+{
+	background-color: #fdfdfd;
+	border-radius: 2px;
+	box-shadow: 0px 1px 5px #000;
+	margin-bottom: 1px;
+}
+
+.TextCont
+{
+	margin-left: 0px;
+	height: 70.5px;
+}
+
+.SendMsg
+{
+	display: flex;
+	justify-content: space-between;
+	background-color: #fdfdfd;
+	border-radius: 3px;
+	padding-left: 10px;
+	height: 70.5px;
+	margin-top: 15px;
+	margin-right: 10px;
+}
+
+.SendMsg > button
+{
+	display: none;
+}
+
+.ChatBox
+{
+	flex: .95;
+}
+
+.ChatPreview
+{
+	display: flex;
+	flex-direction: column;
+	justify-self: flex-start;
+	border-bottom: 1px solid #dadbd3;
+}
+
+.PrevHeader
+{
+	display: flex;
+	flex-direction: row;
+	margin-left: 20px;
+}
+
+.PrevName
+{
+	margin-left: 15px;
+}
+
+.PrevMes
+{
+	margin-left: 65px;
+}
+
+.Prev
+{
+	margin-top: 5px;
+}

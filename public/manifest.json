@@ -1,0 +1,16 @@
+{
+  "short_name": "HigherPlace",
+  "name": "HigherPlace",
+  "icons": [
+    {
+      "src": "./Static/img/IMG_0228.jpeg",
+      "sizes": "200X200 64x64 32x32 24x24 16x16",
+      "type": "image/jpg"
+    }
+  ],
+  "start_url": "/index.html",
+  "display": "standalone",
+  "theme_color": "#0ab678",
+  "background_color": "#ffffff",
+  "orientation": "portrait"
+}

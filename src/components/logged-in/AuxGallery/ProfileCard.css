@@ -1,0 +1,27 @@
+.Head {
+    
+    display: block;
+    padding-top: 0px;
+    height: 65px;
+    margin-top: 5px;
+    background-color: #fafafa;
+}
+
+.Content {
+    margin: 0;
+    height: 100vh;
+    background-color: #fafafa;
+}
+
+.CardText
+{
+    margin: 0px;
+    background-color: #fafafa;
+}
+
+.ArtCard {
+    height: 180px;
+    margin-top: 6vh;
+    margin-bottom: 6px;
+    padding: 0px;
+}

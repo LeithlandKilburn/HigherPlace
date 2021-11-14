@@ -1,0 +1,105 @@
+.ExtGallery{
+    position: fixed;
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+.ExtGalleryContent {
+    margin-bottom: 720px;
+  }
+
+.extProjPost {
+    width: 99%; 
+    margin-left: 2px;
+    margin-top: 75px;
+}
+  
+  /* Media Queries */
+  @media screen and (max-width: 320px) {
+    .ExtGalleryContent {
+      margin-bottom: 720px;
+    } 
+  }
+  
+  @media screen and (max-height: 640px) {
+    .ExtGalleryContent {
+      margin-bottom: 660px;
+    } 
+  }
+  
+  @media screen and (height: 667px) {
+    .ExtGalleryContent {
+      margin-bottom: 640px;
+    } 
+  }
+  
+  @media screen and (height: 731px) {
+    .ExtGalleryContent {
+      margin-bottom: 572px;
+    } 
+  }
+  
+  @media screen and (height: 736px) {
+    .ExtGalleryContent {
+      margin-bottom: 562px;
+    } 
+  }
+  
+  @media screen and (height: 812px) {
+    .ExtGalleryContent {
+      margin-bottom: 498px;
+    } 
+  }
+  
+  @media screen and (height: 823px) {
+    .ExtGalleryContent {
+      margin-bottom: 480px;
+    } 
+  }
+  
+  @media screen and (height: 1366px) {
+    .ExtGalleryContent {
+      margin-bottom: 40px;
+    } 
+  }
+
+.ExtHead {
+    
+    display: block;
+    padding-top: 0px;
+    height: 65px;
+    margin-top: 5px;
+}
+
+.ExtArtCard {
+    height: 160px;
+    margin-top: 55px;
+}
+
+/* .extContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    justify-items: center;
+    margin-top: 15px;
+} */
+
+/* div[class~=ExtContent] {
+    padding: 0px;
+    margin: 0px;
+    margin-left: 16px;
+    justify-content: center;
+}
+
+div[class~=ExtHead] {
+    padding: 0px;
+    margin-left: 16px;
+    margin-top: 5px;
+    justify-content: center;
+}
+
+p[class~=cardText] {
+    margin: 0;
+    margin-bottom: 35px;
+} */

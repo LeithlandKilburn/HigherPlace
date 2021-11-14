@@ -1,0 +1,55 @@
+.media 
+{
+    justify-self: center;
+}
+
+.ArtistInfo
+{
+    cursor: pointer;
+}
+ 
+.QInfo 
+{
+    margin-bottom: 5px;
+    margin-left: 0px;
+}
+ 
+.Artists 
+{
+     display: inline-block;
+     margin-bottom: 10px;
+     width: 120px;
+}
+ 
+.galleryPrev 
+{
+     height: 180px;
+     border-radius: 5px;
+}
+ 
+.ArtistCard 
+{
+     box-shadow: 1px 1px #ddd;
+     border-radius: 5px;
+     
+}
+ 
+Avatar
+{
+    z-index: 0;
+}
+
+p
+{
+    font-size: 16px;
+}
+
+.ArtistStatus
+{
+    background-color: #008844;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 6px;
+    border-radius: 4px;
+    width: fit-content;
+}
