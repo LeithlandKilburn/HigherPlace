@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import {Redirect} from 'react-router';
 import { Paper} from '@material-ui/core/';
 import SearchIcon from '@material-ui/icons/Search';
-import { getArtists } from '../../store/actions/homeActions';
+import { getArtists, filterArtists } from '../../store/actions/homeActions';
 import { getArtist } from '../../store/actions/galleryActions';
 import { firebase } from '../../config/fbConfig';
 
@@ -39,14 +39,30 @@ class Home extends Component
 	{
     console.log(this.props);
 
-    firebase.auth().onAuthStateChanged( () => {
-      if (this.props.city) {
-        this.props.getArtists(this.props.city);
+    if (this.props.searchObject === null)
+    {
+      firebase.auth().onAuthStateChanged( () => {
+        if (this.props.city) {
+          this.props.getArtists(this.props.city);
+        }
+        else {
+          return
+        }
+      })
+    }
+  }
+
+  componentDidUpdate = (prevProps, prevState, snapshot) =>
+  {
+    if (prevProps.searchObject != this.props.searchObject)
+    {
+      if (this.props.searchObject)
+      {
+        console.log("The Market Has Updated!!")
+        this.props.filterArtists(this.props.searchObject);
       }
-      else {
-        return
-      }
-    })
+    }
+    console.log(this.props.searchObject);
   }
 
    
@@ -58,10 +74,16 @@ class Home extends Component
     if (!auth.uid) return <Redirect to='/login'/>
 
 
-    let higherArtists = this.props.cityArtist ? (
-			this.props.cityArtist.map(higherArtist => <HigherArtists key={higherArtist.userID}
+    //Choose Home or Filtered Artists.
+    let marketArtists = (this.props.filteredArtists === null) ? this.props.cityArtists : this.props.filteredArtists;
+    console.log(this.props);
+
+    let higherArtists = marketArtists ? (
+			marketArtists.map(higherArtist => <HigherArtists key={higherArtist.userID}
         goProfile={this.goProfile} artistInfo={higherArtist}/> )
 			) : <p>No artists in your area.</p>
+
+      this.props.searchObject ? console.log(this.props.searchObject) : console.log("Nothing");
     
     return(
      
@@ -105,7 +127,7 @@ class Home extends Component
                                 
 
                     <Paper className="PaperScroll">
-                    <div className="profession"><h5>Tattoo Artists</h5></div>
+                    <div className="profession"><h5>Makeup Artists</h5></div>
 
                           <div className="scrolling-wrapper">
                             <div className='hs'>
@@ -116,7 +138,7 @@ class Home extends Component
                     </Paper>
 
                     <Paper className="PaperScroll">
-                  <div className="profession"><h5>Hair Stylists</h5></div>
+                  <div className="profession"><h5>Models</h5></div>
                       <div className="scrolling-wrapper">
                           <div className='hs'>
                           
@@ -126,7 +148,6 @@ class Home extends Component
 
                     <Paper className="PaperScroll">
                     <div className="profession"><h5>Makeup Artists</h5></div>
-
                         <div className="scrolling-wrapper">
                             <div className='hs'>
                             
@@ -147,7 +168,9 @@ const mapStateToProps = (state) =>
     authError: state.auth.authError,
 		profile: state.firebase.profile,
 		projects: state.project.projects,
-    cityArtist: state.home.cityArtist
+    cityArtists: state.home.cityArtist,
+    searchObject: state.home.searchObject,
+    filteredArtists: state.home.filteredArtists,
   }
 }
 
@@ -156,6 +179,7 @@ const mapDispatchToProps = (dispatch) =>
 	return{
         getArtists: (user) => dispatch(getArtists(user)),
         getArtist: (uid) => dispatch(getArtist(uid)),
+        filterArtists: (searchObject) => dispatch(filterArtists(searchObject)),
     }
 }
 

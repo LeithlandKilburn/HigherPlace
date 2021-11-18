@@ -17,7 +17,7 @@
 
 #GalleryContent
 {
-  margin-bottom: 720px;
+  margin-bottom: 400px;
   margin-top: 5vh; 
   height: 40vh;
   background-color: #fafafa;
@@ -89,16 +89,18 @@
   .GridItems
   {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 40vh);
-    grid-row-gap: 15px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, fit-content);
+    grid-column-gap: 2.5vw;
     grid-row-gap: 20px;
     grid-auto-flow: row;
   }
 
   #GalleryContent
   {
-    height: 85vh;
+    height: fit-content;
+    margin-top: 0px;
+    
   }
 
   .scrolling-wrapperG
@@ -110,14 +112,13 @@
 /* Media Queries *//* Media Queries *//* Media Queries */
 /* Media Queries *//* Media Queries *//* Media Queries */
 
-@media screen and (min-width: 1025px)
+@media screen and (min-width: 1024px)
 {
   .GridItems
   {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 40vh);
-    grid-row-gap: 15px;
+    grid-template-rows: repeat(2, 1fr);
     grid-row-gap: 20px;
     grid-auto-flow: row;
   }
@@ -125,11 +126,12 @@
   #GalleryContent
   {
     height: 85vh;
+    margin-bottom: 200px;
   }
 
   .scrolling-wrapperG
   {
-    height: 85vh
+    height: 85vh;
   }
 }
 

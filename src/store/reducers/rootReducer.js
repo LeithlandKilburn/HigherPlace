@@ -12,7 +12,7 @@ const rootReducer = combineReducers({
     inquiry: inquiryReducer,
     firebase: firebaseReducer,
     firestore: firestoreReducer,
-    home: homeReducer
+    home: homeReducer,
 });
 
 export default rootReducer

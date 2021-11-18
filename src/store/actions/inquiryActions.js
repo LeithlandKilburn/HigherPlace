@@ -1,4 +1,3 @@
-
 export const createInquiry = (inquiry) => 
 {
     return (dispatch, getState, {getFirebase, getFirestore}) => 

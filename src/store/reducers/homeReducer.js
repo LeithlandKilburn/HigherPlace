@@ -1,8 +1,9 @@
 const initState = 
 {
     city: "Atlanta",
-    cityArtist: null
-
+    cityArtist: null,
+    searchObject: null,
+    filteredArtists: null,
 }
 
 const homeReducer = (state = initState, action) =>
@@ -14,10 +15,18 @@ const homeReducer = (state = initState, action) =>
                 ...state,
                 cityArtist: action.homeArtists
             }
-        
         case "GET_ARTISTS_ERROR":
             return state;
-        
+        case "SEARCH":  
+            return {
+                    ...state,
+                    searchObject: action.searchObject,
+                };
+        case "FILTER_ARTISTS":
+            return {
+                    ...state,
+                    filteredArtists: action.filteredArtists
+            };
         default: 
             return state;
     }
