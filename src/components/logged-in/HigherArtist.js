@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { firebase } from '../../config/fbConfig';
 import { Card} from 'react-md';
 import Typography from '@material-ui/core/Typography';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -9,7 +10,8 @@ import lp15 from "./LP-15.jpg";
 import "./css/HigherArtists.css";
 
 
-class HigherArtists extends Component {
+class HigherArtists extends Component 
+{
 
   constructor(props)
   {
@@ -23,9 +25,34 @@ class HigherArtists extends Component {
   {
     this.props.goProfile(this.props.artistInfo.userID);
   }
+
+  componentDidMount = () =>
+  {
+    if (this.props.artistInfo.projectPreviews)
+    {
+      //Retrieving thumbnail image from Firebase storage.
+        //let thumbRef = `${this.props.post.thumbnail.slice(34)}`;
+        console.log(this.state.title);
+        firebase.storage().ref(`${this.props.artistInfo.projectPreviews[1]}`).getDownloadURL().then((url) => {
+          this.setState(() => {
+            return {
+              ...this.state,
+              thumbnail: url,
+            }
+          })
+        }).catch(err => {
+          console.log("The thumbnail did not load");
+          
+        })
+      }
+  }
   
   render()
   {
+    console.log(this.props);
+
+    let pic = this.props.artistInfo.projectPreviews ? this.state.thumbnail : bron;
+
     return (
             
       <>
@@ -33,7 +60,7 @@ class HigherArtists extends Component {
           <Card className="ArtistCard">
               <CardMedia
               className="galleryPrev"
-              image= {bron}
+              image= {pic}
               title="Contemplative Reptile"
               />
           </Card>
@@ -47,7 +74,7 @@ class HigherArtists extends Component {
       </div>
    </>
   )
-  }  
-}
+  }
+}  
 
 export default HigherArtists;

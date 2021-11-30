@@ -5,7 +5,6 @@ import Search from "./Search.js";
 import { connect } from 'react-redux';
 import {Redirect} from 'react-router';
 import { Paper} from '@material-ui/core/';
-import SearchIcon from '@material-ui/icons/Search';
 import { getArtists, filterArtists } from '../../store/actions/homeActions';
 import { getArtist } from '../../store/actions/galleryActions';
 import { firebase } from '../../config/fbConfig';
@@ -54,7 +53,7 @@ class Home extends Component
 
   componentDidUpdate = (prevProps, prevState, snapshot) =>
   {
-    if (prevProps.searchObject != this.props.searchObject)
+    if (prevProps.searchObject !== this.props.searchObject)
     {
       if (this.props.searchObject)
       {
@@ -99,7 +98,6 @@ class Home extends Component
                   <div className="scrolling-wrapper">
                       <div className='hs'>
                           {higherArtists}
-                          {higherArtists}
                       </div>
                     </div>
                   </Paper>
@@ -110,7 +108,6 @@ class Home extends Component
                     <div className="scrolling-wrapper">
                         <div className='hs'>
                         {higherArtists}
-                        {higherArtists}
                         </div>
                       </div>
                   </Paper>
@@ -119,7 +116,6 @@ class Home extends Component
                   <div className="profession"><h5>Graphic Designers</h5></div>
                       <div className="scrolling-wrapper">
                           <div className='hs'>
-                          {higherArtists}
                           {higherArtists}
                           </div>
                         </div>
@@ -132,7 +128,6 @@ class Home extends Component
                           <div className="scrolling-wrapper">
                             <div className='hs'>
                              {higherArtists}
-                             {higherArtists}
                             </div>
                           </div>
                     </Paper>
@@ -141,7 +136,7 @@ class Home extends Component
                   <div className="profession"><h5>Models</h5></div>
                       <div className="scrolling-wrapper">
                           <div className='hs'>
-                          
+                            {higherArtists}
                           </div>
                         </div>
                   </Paper>

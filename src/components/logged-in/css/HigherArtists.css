@@ -12,18 +12,21 @@
 {
     margin-bottom: 5px;
     margin-left: 0px;
+    font-size: 18px;
+    font-weight: 500;
 }
  
 .Artists 
 {
      display: inline-block;
      margin-bottom: 10px;
-     width: 120px;
+     width: 140px;
 }
  
 .galleryPrev 
 {
-     height: 180px;
+    height: 210px;
+    width: 140px;
      border-radius: 5px;
 }
  
