@@ -25,10 +25,14 @@
 
   .SearchButton
   {
-    background-color: rgba(233, 217, 166, 0.9);
-    border: solid 2px rgba(130, 120, 0, 1);
+    background-image: linear-gradient(to right, rgba(230, 210, 100, .9), 
+    rgba(255, 235, 170, .9) 45%,rgba(230, 210, 100, .9));
+    border: solid 2px rgba(104, 102, 1, 0.9);
     border-radius: 2px;
-    height: auto;
+    height: 4vh;
+    width: 20%;
+    color: rgba(37, 37, 1, 0.9);
+    font-weight: 500;
     cursor: pointer;
   }
 
@@ -37,7 +41,15 @@
     margin: 0 5vw 0 0;
     padding-left: 16px;
     display: inline-block;
-    width: 70%;
+    width: 68%;
+  }
+
+  #SearchBarNotClicked
+  {
+    margin: 0 5vw 0 0;
+    padding-left: 16px;
+    display: inline-block;
+    width: 94%;
   }
 
   .SearchFilters
@@ -58,5 +70,6 @@
     rgba(255, 235, 170, .9) 45%,rgba(230, 210, 100, .9));
     border: solid 2px rgba(130, 120, 0, 1);
     height: 5vh;
+    font-size: 15px;
     cursor: pointer;
   }

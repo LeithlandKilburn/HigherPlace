@@ -186,12 +186,22 @@ class Search extends Component
                                 </div>
                             </form>
 
-                            : <form>
-                                    <div className="SearchFunctions">
-                                        <input id="SearchBar" placeholder="Artists, Locations, & Cultural Groups" 
-                                            type="text"/>
-                                    </div>
-                                </form>
+                            : <form onSubmit={this.searchClick}>
+                                <div className="SearchFunctions">
+                                    <input id="SearchBarNotClicked" onChange={this.searchArtist} placeholder="Find An Artist" ref={this.inputRef}
+                                    type="text" value={currentFilter}/>
+                                </div>
+                                <div className="SearchFilters">
+                                    <button onContextMenu={this.noBlur} value="Location" onMouseDown={this.noBlur} 
+                                        onClick={this.filterClick} className="FilterButton">Location</button>
+                                    <button onContextMenu={this.noBlur} value="Artistry" onMouseDown={this.noBlur} 
+                                        onClick={this.filterClick} className="FilterButton">Artistry</button>
+                                    <button onContextMenu={this.noBlur} value="Affinity" onMouseDown={this.noBlur} 
+                                        onClick={this.filterClick} className="FilterButton">Affinity</button>
+                                    <button onContextMenu={this.noBlur} value="Availability" onMouseDown={this.noBlur} 
+                                        onClick={this.filterClick} className="FilterButton">Availability</button>
+                                </div>
+                            </form>
 
         return(
 
