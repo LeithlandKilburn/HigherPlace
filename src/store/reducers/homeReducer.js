@@ -17,6 +17,13 @@ const homeReducer = (state = initState, action) =>
             }
         case "GET_ARTISTS_ERROR":
             return state;
+        case "GET_PREVIEWS":
+            return {
+                ...state,
+                [action.artistPreview.uid]: action.artistPreview.urlArray,
+            }
+        case "GET_PREVIEWS_ERROR":
+            return state;
         case "SEARCH":  
             return {
                     ...state,

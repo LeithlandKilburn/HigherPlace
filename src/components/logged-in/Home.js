@@ -57,7 +57,7 @@ class Home extends Component
     {
       if (this.props.searchObject)
       {
-        console.log("The Market Has Updated!!")
+        console.log("The Market Has Updated!!");
         this.props.filterArtists(this.props.searchObject);
       }
     }
@@ -171,7 +171,7 @@ const mapStateToProps = (state) =>
 
 const mapDispatchToProps = (dispatch) =>
 {
-	return{
+	return {
         getArtists: (user) => dispatch(getArtists(user)),
         getArtist: (uid) => dispatch(getArtist(uid)),
         filterArtists: (searchObject) => dispatch(filterArtists(searchObject)),

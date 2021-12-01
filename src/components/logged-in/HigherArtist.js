@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {getPreviews} from '../../store/actions/homeActions';
 import { firebase } from '../../config/fbConfig';
 import { Card} from 'react-md';
 import Typography from '@material-ui/core/Typography';
@@ -8,6 +10,7 @@ import lp11 from "./Gin1.jpg";
 import bron from "./bron.jpg";
 import lp15 from "./LP-15.jpg";
 import "./css/HigherArtists.css";
+import { TransferWithinAStation } from '@material-ui/icons';
 
 
 class HigherArtists extends Component 
@@ -18,7 +21,6 @@ class HigherArtists extends Component
 		super(props);
 		this.state={
 			previewIndex: 0,
-      thumbnail: 'hkkj',
     }
   };
 
@@ -29,79 +31,49 @@ class HigherArtists extends Component
 
   showPreview = (e) =>
   {
-    if (this.props.artistInfo.projectPreviews)
+    let total = this.props.artistInfo.projectPreviews.length;
+    if ((this.state.previewIndex + 1) < total)
     {
-      let total = this.props.artistInfo.projectPreviews.length;
-      if ((this.state.previewIndex + 1) < total)
-      {
-        this.setState( (prevState => (
-          {
-            ...this.state,
-            previewIndex: (prevState.previewIndex + 1)
-          }
-        )))
-      } else
-      {
-        this.setState(
-          {
-            ...this.state,
-            previewIndex: 0,
-          }
-        )
-      }
+      console.log(this.state.previewIndex + 1)
+      this.setState( (prevState => (
+        {
+          ...this.state,
+          previewIndex: (prevState.previewIndex + 1),
+        }
+      )))
+    } else
+    {
+      this.setState( (prevState => (
+        {
+          ...this.state,
+          previewIndex: 0,
+        }
+      )))
     }
   }
 
-  componentDidUpdate = (prevProps, prevState) =>
+  componentDidMount = async () =>
   {
-    console.log(prevState);
-    if (prevState.previewIndex !== this.state.previewIndex)
-    {
-      //Retrieving thumbnail image from Firebase storage.
-      if (this.props.artistInfo.projectPreviews)
+
+    //Retrieve all thumbnail URL's 
+    if (this.props.artistInfo.projectPreviews)
       {
-        console.log(this.state.title);
-          firebase.storage().ref(`${this.props.artistInfo.projectPreviews[this.state.previewIndex]}`).getDownloadURL().then((url) => {
-            this.setState(() => {
-              return {
-                ...this.state,
-                thumbnail: url,
-              }
-            })
-          }).catch(err => {
-            console.log("The thumbnail did not load");
-            
-          })
+        if (!(this.props.urlArray[this.props.artistInfo.userID]))
+        {
+          this.props.getPreviews(this.props.artistInfo.projectPreviews, this.props.artistInfo.userID);
+        }
       }
-    }
   }
 
-  componentDidMount = () =>
+  componentDidUpdate = () => 
   {
-    if (this.props.artistInfo.projectPreviews)
-    {
-      //Retrieving thumbnail image from Firebase storage.
-      //let thumbRef = `${this.props.post.thumbnail.slice(34)}`;
-        console.log(this.state.title);
-        firebase.storage().ref(`${this.props.artistInfo.projectPreviews[this.state.previewIndex]}`).getDownloadURL().then((url) => {
-          this.setState(() => {
-            return {
-              ...this.state,
-              thumbnail: url,
-            }
-          })
-        }).catch(err => {
-          console.log("The thumbnail did not load");
-          
-        })
-      }
+
   }
   
   render()
   {
-    console.log(this.props);
 
-    let pic = this.props.artistInfo.projectPreviews ? this.state.thumbnail : bron;
+    let pic = this.props.urlArray[this.props.artistInfo.userID] ? this.props.urlArray[this.props.artistInfo.userID][this.state.previewIndex] : "o";
 
     return (
             
@@ -126,6 +98,20 @@ class HigherArtists extends Component
    </>
   )
   }
-}  
+}
 
-export default HigherArtists;
+const mapStateToProps = (state) =>
+{
+  return {
+    urlArray: state.home,
+  }
+}
+
+const mapDispatchToProps = (dispatch) =>
+{
+  return {
+    getPreviews: (pathsArray, uid) => dispatch(getPreviews(pathsArray, uid)),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(HigherArtists);

@@ -27,6 +27,39 @@ export const getArtists = (userCity) =>
     }
 }
 
+export const getPreviews = (pathsArray, uid) =>
+{
+    return async (dispatch, getState, {getFirebase}) => 
+    {
+        // Perform asynchronous task.
+        const firebase = getFirebase();
+        
+        let total = pathsArray.length;
+        let urlArray = [];
+        let error = false;
+        let url = "dm";
+
+        for (let i = 0; i < total; i++)
+        {
+            console.log("The thumbnail loaded");
+            url = await firebase.storage().ref(`${pathsArray[i]}`).getDownloadURL()
+                      .catch(err => 
+                        { 
+                            console.log("The thumbnail did not load");
+                            error = true;
+                            dispatch({type: 'GET_PREVIEWS_ERROR'});
+                        });
+            urlArray = [...urlArray, url];  
+        }
+
+        if (error === false)
+        {
+            let artistPreview = { urlArray: urlArray, uid: uid};
+            dispatch({type: 'GET_PREVIEWS', artistPreview});
+        }
+    }
+} 
+
 export const goSearch = (searchObject) =>
 {
     return (dispatch) => 
