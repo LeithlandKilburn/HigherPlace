@@ -72,14 +72,13 @@ class Search extends Component
         switch(filter)
         {
             case "Location":
-                this.setState(
-                    {
-                        ...this.state,
-                        searchObject: {...this.state.searchObject,
-                                        Location: e.target.value
-                                    },
-                    }
-                )
+                this.setState( (prevState) => (
+                {
+                    ...this.state,
+                    searchObject: {...prevState.searchObject,
+                                    Location: e.target.value
+                                  },
+                }))
                 break;
             case "Artistry":
                 this.setState(

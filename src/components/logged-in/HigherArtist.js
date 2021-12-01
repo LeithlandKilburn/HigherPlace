@@ -17,7 +17,8 @@ class HigherArtists extends Component
   {
 		super(props);
 		this.state={
-			
+			previewIndex: 0,
+      thumbnail: 'hkkj',
     }
   };
 
@@ -26,14 +27,63 @@ class HigherArtists extends Component
     this.props.goProfile(this.props.artistInfo.userID);
   }
 
+  showPreview = (e) =>
+  {
+    if (this.props.artistInfo.projectPreviews)
+    {
+      let total = this.props.artistInfo.projectPreviews.length;
+      if ((this.state.previewIndex + 1) < total)
+      {
+        this.setState( (prevState => (
+          {
+            ...this.state,
+            previewIndex: (prevState.previewIndex + 1)
+          }
+        )))
+      } else
+      {
+        this.setState(
+          {
+            ...this.state,
+            previewIndex: 0,
+          }
+        )
+      }
+    }
+  }
+
+  componentDidUpdate = (prevProps, prevState) =>
+  {
+    console.log(prevState);
+    if (prevState.previewIndex !== this.state.previewIndex)
+    {
+      //Retrieving thumbnail image from Firebase storage.
+      if (this.props.artistInfo.projectPreviews)
+      {
+        console.log(this.state.title);
+          firebase.storage().ref(`${this.props.artistInfo.projectPreviews[this.state.previewIndex]}`).getDownloadURL().then((url) => {
+            this.setState(() => {
+              return {
+                ...this.state,
+                thumbnail: url,
+              }
+            })
+          }).catch(err => {
+            console.log("The thumbnail did not load");
+            
+          })
+      }
+    }
+  }
+
   componentDidMount = () =>
   {
     if (this.props.artistInfo.projectPreviews)
     {
       //Retrieving thumbnail image from Firebase storage.
-        //let thumbRef = `${this.props.post.thumbnail.slice(34)}`;
+      //let thumbRef = `${this.props.post.thumbnail.slice(34)}`;
         console.log(this.state.title);
-        firebase.storage().ref(`${this.props.artistInfo.projectPreviews[1]}`).getDownloadURL().then((url) => {
+        firebase.storage().ref(`${this.props.artistInfo.projectPreviews[this.state.previewIndex]}`).getDownloadURL().then((url) => {
           this.setState(() => {
             return {
               ...this.state,
@@ -62,6 +112,7 @@ class HigherArtists extends Component
               className="galleryPrev"
               image= {pic}
               title="Contemplative Reptile"
+              onClick={this.showPreview}
               />
           </Card>
           
