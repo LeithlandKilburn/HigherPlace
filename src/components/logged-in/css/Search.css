@@ -17,6 +17,12 @@
     z-index: 1;
   }
 
+  #ArtistryDrop
+  {
+    display: inline-block;
+    margin-bottom: 2px;
+  }
+
   #SearchBar
   {
     margin: 0 0 0px;
@@ -72,4 +78,11 @@
     height: 5vh;
     font-size: 15px;
     cursor: pointer;
+    transition: border 25ms;
+    
+  }
+
+  .FilterButton:focus
+  {
+    border: solid 3px rgba(20, 20, 20, 0.9);
   }

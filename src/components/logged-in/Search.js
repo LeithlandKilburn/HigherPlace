@@ -10,22 +10,32 @@ class Search extends Component
     {
         super(props);
         this.inputRef = React.createRef();
+        this.filter1Ref = React.createRef();
+        this.filter2Ref = React.createRef();
+        this.filter3Ref = React.createRef();
+        this.filter4Ref = React.createRef();
         this.state =
         {
             searchClicked: false,
-            searchFilter: "ArtistName",
+            searchFilter: "Name",
             searchObject: {
                 ArtistName: "",
                 Location: "",
                 Artistry: "",
                 Affinity: "",
-                Availability: "",
-            }
+                Names: "",
+            },
+            ArtistName: "",
+            LocationOpen: false,
+            ArtistryOpen: false,
+            AffinityOpen: false,
+            NamesOpen: false,
         }
     }
     
     showFilters = () =>
     {
+        console.log("Filter OnFilter OnFocussss");
         this.setState(
             {
                 ...this.state,
@@ -36,22 +46,26 @@ class Search extends Component
 
     hideFilters = (e) =>
     {
-        if (e)
+        console.log("On Blurrr. New target is: ", e.relatedTarget, this.filter1Ref.current);
+        if ((e.relatedTarget === this.filter1Ref.current || e.relatedTarget === this.filter2Ref.current ||
+            e.relatedTarget === this.filter3Ref.current || e.relatedTarget === this.filter4Ref.current) && e.relatedTarget !== null)
         {
-            e.preventDefault();
+            console.log("Not blurring cuz we're in a dropdown.");
+        } else
+        {
+            this.setState(
+                {
+                    ...this.state,
+                    searchClicked: false,
+                }
+            )
         }
-        
-        this.setState(
-            {
-                ...this.state,
-                searchClicked: false,
-            }
-        )
     }
 
     searchClick = (e) =>
     {
         e.preventDefault();
+        console.log(this.inputRef);
         console.log("gonna reset search filters");
         this.setState(
             {
@@ -101,12 +115,12 @@ class Search extends Component
                     }
                 )
                 break;
-            case "Availability":
+            case "Names":
                 this.setState(
                     {
                         ...this.state,
                         searchObject: {...this.state.searchObject,
-                                        Availability: e.target.value
+                                        Names: e.target.value
                                     },
                     }
                 )
@@ -127,17 +141,118 @@ class Search extends Component
     filterClick = (e) =>
     {
         e.preventDefault();
+        console.log(document.activeElement);
+        console.log(e.target);
+        if (document.activeElement === e.target)
+
+        if(this.state.searchFilter === e.target.value && this.state.searchClicked === false)
+        {
+            console.log("Filter OnClickkk and this.searchClicked is falseee");
+            this.setState(
+                {
+                    ...this.state,
+                    searchClicked: true,
+                    searchFilter: e.target.value,
+                    [`${e.target.value}Open`]: true,
+                }
+            )
+        } else if (this.state.searchFilter === e.target.value && this.state.searchClicked === true)
+        {
+            this.setState(
+                {
+                    ...this.state,
+                    searchFilter: e.target.value,
+                    [`${e.target.value}Open`]: !this.state[`${e.target.value}Open`],
+                }
+            )
+        } else
+        {
+            let filterOpen;
+            switch (e.target.value)
+            {
+                case "Location":
+                    filterOpen = "LocationOpen";
+                    this.setState(
+                        {
+                            ...this.state,
+                            searchClicked: true,
+                            searchFilter: e.target.value,
+                            LocationOpen: !this.state.LocationOpen,
+                            ArtistryOpen: false,
+                            AffinityOpen: false,
+                            NamesOpen: false,
+                        }
+                    )
+                    break;
+                case "Artistry":
+                    filterOpen = "ArtistryOpen";
+                    this.setState(
+                        {
+                            ...this.state,
+                            searchClicked: true,
+                            searchFilter: e.target.value,
+                            LocationOpen: false,
+                            ArtistryOpen: !this.state.ArtistryOpen,
+                            AffinityOpen: false,
+                            NamesOpen: false,
+                        }
+                    )
+                    break;
+                case "Affinity":
+                    filterOpen = "AffinityOpen";
+                    this.setState(
+                        {
+                            ...this.state,
+                            searchClicked: true,
+                            searchFilter: e.target.value,
+                            LocationOpen: false,
+                            ArtistryOpen: false,
+                            AffinityOpen: !this.state.AffinityOpen,
+                            NamesOpen: false,
+                        }
+                    )
+                    break;
+                case "Names":
+                    filterOpen = "NamesOpen";
+                    this.setState(
+                        {
+                            ...this.state,
+                            searchClicked: true,
+                            searchFilter: e.target.value,
+                            LocationOpen: false,
+                            ArtistryOpen: false,
+                            AffinityOpen: false,
+                            NamesOpen: !this.state.NamesOpen,
+                        }
+                    )
+                    break;
+                default:
+                    break;
+                
+            } 
+        }
+    }
+
+    selectArt = (e) =>
+    {
         this.setState(
             {
                 ...this.state,
-                searchFilter: e.target.value,
-            }
-        )
+                searchClicked: true,
+                LocationOpen: false,
+                ArtistryOpen: true,
+                AffinityOpen: false,
+                NamesOpen: false,
+            })
     }
 
     noBlur = (e) =>
     {
-        e.preventDefault();
+        console.log("No Blur");
+    }
+
+    noBlurNames = (e) =>
+    {
         console.log("No Blur");
     }
     
@@ -156,8 +271,8 @@ class Search extends Component
             case "Affinity":
                 currentFilter = this.state.searchObject.Affinity;
                 break;
-            case "Availability":
-                currentFilter = this.state.searchObject.Availability;
+            case "Names":
+                currentFilter = this.state.searchObject.Names;
                 break;
             case "default":
                 currentFilter = this.state.searchObject.ArtistName;
@@ -166,46 +281,65 @@ class Search extends Component
 
         console.log(this.state);
 
-        const searchFilters = this.state.searchClicked ? 
+        const searchFilters = (this.state.searchClicked) ? 
 
                             <form onSubmit={this.searchClick}>
                                 <div className="SearchFunctions">
                                     <input id="SearchBarClicked" onChange={this.searchArtist} placeholder="Find An Artist" ref={this.inputRef}
-                                    type="text" value={currentFilter}/>
+                                    type="text" onFocus={this.showFilters} onBlur={this.hideFilters} value={currentFilter}/>
+
                                     <button onContextMenu={this.noBlur} onMouseDown={this.searchClick} className="SearchButton"> Search </button>
                                 </div>
-                                <div className="SearchFilters">
-                                    <button onContextMenu={this.noBlur} value="Location" onMouseDown={this.noBlur} 
+                                <div className="SearchFilters" >
+                                    <button  value="Location" onBlur={this.hideFilters} 
                                         onClick={this.filterClick} className="FilterButton">Location</button>
-                                    <button onContextMenu={this.noBlur} value="Artistry" onMouseDown={this.noBlur} 
+
+                                    <button value="Names"  onBlur={this.hideFilters}
+                                        onClick={this.filterClick} className="FilterButton">Names</button>
+                                
+                                    <button value="Artistry"  onBlur={this.hideFilters}
                                         onClick={this.filterClick} className="FilterButton">Artistry</button>
-                                    <button onContextMenu={this.noBlur} value="Affinity" onMouseDown={this.noBlur} 
-                                        onClick={this.filterClick} className="FilterButton">Affinity</button>
-                                    <button onContextMenu={this.noBlur} value="Availability" onMouseDown={this.noBlur} 
-                                        onClick={this.filterClick} className="FilterButton">Availability</button>
+                                        
+                                    <button value="Affinity" onBlur={this.hideFilters} onClick={this.filterClick}
+                                        className="FilterButton">Affinity</button>
                                 </div>
+                                {this.state.LocationOpen && <input type="text" onContextMenu={this.noBlur} ref={this.filter1Ref} onBlur={this.hideFilters} onClick={this.showFilters}/>}
+                                {this.state.ArtistryOpen && <div>
+                                                                <form>
+                                                                <select id="ArtistryDrop" ref={this.filter2Ref} value="lime" onBlur={this.hideFilters} onChange={this.handleChange}>
+                                                                    <option value="grapefruit">Grapefruit</option>
+                                                                    <option value="lime">Lime</option>
+                                                                    <option value="coconut">Coconut</option>
+                                                                    <option value="mango">Mango</option>
+                                                                </select>
+                                                                </form>
+                                                            </div>}
+                                {this.state.AffinityOpen && <button onFocus={this.showFilters} ref={this.filter3Ref} onBlur={this.hideFilters} 
+                                                                onClick={(e) => {e.preventDefault()}} onContextMenu={this.noBlur} >Affinity open.</button>}
+                                {this.state.NamesOpen && <button onFocus={this.showFilters} ref={this.filter4Ref} onBlur={this.hideFilters} 
+                                                                onClick={(e) => {e.preventDefault()}}onContextMenu={this.noBlur} >Names open.</button>}
                             </form>
 
-                            : <form onSubmit={this.searchClick}>
+                            : <form>
                                 <div className="SearchFunctions">
-                                    <input id="SearchBarNotClicked" onChange={this.searchArtist} placeholder="Find An Artist" ref={this.inputRef}
-                                    type="text" value={currentFilter}/>
+                                    <input id="SearchBarNotClicked" placeholder="Find An Artist" ref={this.inputRef}
+                                    type="text" onFocus={this.showFilters} value={currentFilter}/>
                                 </div>
                                 <div className="SearchFilters">
-                                    <button onContextMenu={this.noBlur} value="Location" onMouseDown={this.noBlur} 
-                                        onClick={this.filterClick} className="FilterButton">Location</button>
-                                    <button onContextMenu={this.noBlur} value="Artistry" onMouseDown={this.noBlur} 
-                                        onClick={this.filterClick} className="FilterButton">Artistry</button>
-                                    <button onContextMenu={this.noBlur} value="Affinity" onMouseDown={this.noBlur} 
-                                        onClick={this.filterClick} className="FilterButton">Affinity</button>
-                                    <button onContextMenu={this.noBlur} value="Availability" onMouseDown={this.noBlur} 
-                                        onClick={this.filterClick} className="FilterButton">Availability</button>
+                                    <button onContextMenu={this.noBlur} onClick={this.filterClick} ref={this.filter1Ref} className="FilterButton"
+                                    value="Location"> Location </button>
+                                    <button onContextMenu={this.noBlur} onClick={this.filterClick} className="FilterButton"
+                                    value="Names"> Names </button>
+                                    <button onContextMenu={this.noBlur} onClick={this.filterClick} className="FilterButton"
+                                    value="Artistry"> Artistry </button>
+                                    <button  onContextMenu={this.noBlur} onClick={this.filterClick} className="FilterButton"
+                                    value="Affinity"> Affinity </button>
                                 </div>
                             </form>
 
         return(
 
-            <div className="Search" onFocus={this.showFilters} onBlur={this.hideFilters}>
+            <div className="Search">
                 {searchFilters}
             </div>
         )

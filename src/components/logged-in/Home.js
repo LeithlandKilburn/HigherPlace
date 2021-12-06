@@ -122,7 +122,16 @@ class Home extends Component
                   </Paper>
                                 
 
-                    <Paper className="PaperScroll">
+                  <Paper className="PaperScroll">
+                  <div className="profession"><h5>Models</h5></div>
+                      <div className="scrolling-wrapper">
+                          <div className='hs'>
+                            {higherArtists}
+                          </div>
+                        </div>
+                  </Paper>
+                  
+                  <Paper className="PaperScroll">
                     <div className="profession"><h5>Makeup Artists</h5></div>
 
                           <div className="scrolling-wrapper">
@@ -131,15 +140,6 @@ class Home extends Component
                             </div>
                           </div>
                     </Paper>
-
-                    <Paper className="PaperScroll">
-                  <div className="profession"><h5>Models</h5></div>
-                      <div className="scrolling-wrapper">
-                          <div className='hs'>
-                            {higherArtists}
-                          </div>
-                        </div>
-                  </Paper>
 
                     <Paper className="PaperScroll">
                     <div className="profession"><h5>Makeup Artists</h5></div>
