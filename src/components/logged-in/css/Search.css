@@ -86,3 +86,8 @@
   {
     border: solid 3px rgba(20, 20, 20, 0.9);
   }
+
+  .GiveCursor
+  {
+    cursor: pointer;
+  }

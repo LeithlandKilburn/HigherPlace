@@ -33,8 +33,9 @@ class Search extends Component
         }
     }
     
-    showFilters = () =>
+    showFilters = (e) =>
     {
+        e.target.focus();
         console.log("Filter OnFilter OnFocussss");
         this.setState(
             {
@@ -144,6 +145,7 @@ class Search extends Component
         console.log(document.activeElement);
         console.log(e.target);
         if (document.activeElement === e.target)
+        e.target.focus();
 
         if(this.state.searchFilter === e.target.value && this.state.searchClicked === false)
         {
@@ -284,29 +286,29 @@ class Search extends Component
         const searchFilters = (this.state.searchClicked) ? 
 
                             <form onSubmit={this.searchClick}>
-                                <div className="SearchFunctions">
-                                    <input id="SearchBarClicked" onChange={this.searchArtist} placeholder="Find An Artist" ref={this.inputRef}
+                                <div className="SearchFunctions ">
+                                    <input id="SearchBarClicked" className="GiveCursor" onChange={this.searchArtist} placeholder="Find An Artist" ref={this.inputRef}
                                     type="text" onFocus={this.showFilters} onBlur={this.hideFilters} value={currentFilter}/>
 
-                                    <button onContextMenu={this.noBlur} onMouseDown={this.searchClick} className="SearchButton"> Search </button>
+                                    <button onContextMenu={this.noBlur} onClick={this.searchClick} className="SearchButton GiveCursor"> Search </button>
                                 </div>
                                 <div className="SearchFilters" >
                                     <button  value="Location" onBlur={this.hideFilters} 
-                                        onClick={this.filterClick} className="FilterButton">Location</button>
+                                        onClick={this.filterClick} className="FilterButton GiveCursor">Location</button>
 
                                     <button value="Names"  onBlur={this.hideFilters}
-                                        onClick={this.filterClick} className="FilterButton">Names</button>
+                                        onClick={this.filterClick} className="FilterButton GiveCursor">Names</button>
                                 
                                     <button value="Artistry"  onBlur={this.hideFilters}
-                                        onClick={this.filterClick} className="FilterButton">Artistry</button>
+                                        onClick={this.filterClick} className="FilterButton GiveCursor">Artistry</button>
                                         
-                                    <button value="Affinity" onBlur={this.hideFilters} onClick={this.filterClick}
-                                        className="FilterButton">Affinity</button>
+                                    <button tabIndex="0" value="Affinity" onBlur={this.hideFilters} onClick={this.filterClick}
+                                        className="FilterButton GiveCursor">Affinity</button>
                                 </div>
-                                {this.state.LocationOpen && <input type="text" onContextMenu={this.noBlur} ref={this.filter1Ref} onBlur={this.hideFilters} onClick={this.showFilters}/>}
+                                {this.state.LocationOpen && <input type="text" className="GiveCursor" onContextMenu={this.noBlur} ref={this.filter1Ref} onBlur={this.hideFilters} onClick={this.showFilters}/>}
                                 {this.state.ArtistryOpen && <div>
                                                                 <form>
-                                                                <select id="ArtistryDrop" ref={this.filter2Ref} value="lime" onBlur={this.hideFilters} onChange={this.handleChange}>
+                                                                <select id="ArtistryDrop" className="GiveCursor" ref={this.filter2Ref} value="lime" onBlur={this.hideFilters} onChange={this.handleChange}>
                                                                     <option value="grapefruit">Grapefruit</option>
                                                                     <option value="lime">Lime</option>
                                                                     <option value="coconut">Coconut</option>
@@ -314,10 +316,10 @@ class Search extends Component
                                                                 </select>
                                                                 </form>
                                                             </div>}
-                                {this.state.AffinityOpen && <button onFocus={this.showFilters} ref={this.filter3Ref} onBlur={this.hideFilters} 
-                                                                onClick={(e) => {e.preventDefault()}} onContextMenu={this.noBlur} >Affinity open.</button>}
-                                {this.state.NamesOpen && <button onFocus={this.showFilters} ref={this.filter4Ref} onBlur={this.hideFilters} 
-                                                                onClick={(e) => {e.preventDefault()}}onContextMenu={this.noBlur} >Names open.</button>}
+                                {this.state.AffinityOpen && <button onFocus={this.showFilters} className="GiveCursor" ref={this.filter3Ref} onBlur={this.hideFilters} 
+                                                                onClick={(e) => {e.preventDefault(); e.target.focus();}} onContextMenu={this.noBlur} >Affinity open.</button>}
+                                {this.state.NamesOpen && <button className="GiveCursor" onFocus={this.showFilters} ref={this.filter4Ref} onBlur={this.hideFilters} 
+                                                                onClick={(e) => {e.preventDefault(); e.target.focus();}}onContextMenu={this.noBlur} >Names open.</button>}
                             </form>
 
                             : <form>
@@ -326,13 +328,13 @@ class Search extends Component
                                     type="text" onFocus={this.showFilters} value={currentFilter}/>
                                 </div>
                                 <div className="SearchFilters">
-                                    <button onContextMenu={this.noBlur} onClick={this.filterClick} ref={this.filter1Ref} className="FilterButton"
+                                    <button onContextMenu={this.noBlur} onClick={this.filterClick} ref={this.filter1Ref} className="FilterButton GiveCursor"
                                     value="Location"> Location </button>
-                                    <button onContextMenu={this.noBlur} onClick={this.filterClick} className="FilterButton"
+                                    <button onContextMenu={this.noBlur} onClick={this.filterClick} className="FilterButton GiveCursor"
                                     value="Names"> Names </button>
-                                    <button onContextMenu={this.noBlur} onClick={this.filterClick} className="FilterButton"
+                                    <button onContextMenu={this.noBlur} onClick={this.filterClick} className="FilterButton GiveCursor"
                                     value="Artistry"> Artistry </button>
-                                    <button  onContextMenu={this.noBlur} onClick={this.filterClick} className="FilterButton"
+                                    <button  onContextMenu={this.noBlur} onClick={this.filterClick} className="FilterButton GiveCursor"
                                     value="Affinity"> Affinity </button>
                                 </div>
                             </form>
