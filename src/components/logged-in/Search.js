@@ -47,6 +47,7 @@ class Search extends Component
 
     hideFilters = (e) =>
     {
+        e.target.blur();
         console.log("On Blurrr. New target is: ", e.relatedTarget, this.filter1Ref.current);
         if ((e.relatedTarget === this.filter1Ref.current || e.relatedTarget === this.filter2Ref.current ||
             e.relatedTarget === this.filter3Ref.current || e.relatedTarget === this.filter4Ref.current) && e.relatedTarget !== null)
@@ -305,7 +306,6 @@ class Search extends Component
                                     <button tabIndex="0" value="Affinity" onBlur={this.hideFilters} onClick={this.filterClick}
                                         className="FilterButton GiveCursor">Affinity</button>
                                 </div>
-                                {this.state.LocationOpen && <input type="text" className="GiveCursor" onContextMenu={this.noBlur} ref={this.filter1Ref} onBlur={this.hideFilters} onClick={this.showFilters}/>}
                                 {this.state.ArtistryOpen && <div>
                                                                 <form>
                                                                 <select id="ArtistryDrop" className="GiveCursor" ref={this.filter2Ref} value="lime" onBlur={this.hideFilters} onChange={this.handleChange}>
@@ -318,8 +318,6 @@ class Search extends Component
                                                             </div>}
                                 {this.state.AffinityOpen && <button onFocus={this.showFilters} className="GiveCursor" ref={this.filter3Ref} onBlur={this.hideFilters} 
                                                                 onClick={(e) => {e.preventDefault(); e.target.focus();}} onContextMenu={this.noBlur} >Affinity open.</button>}
-                                {this.state.NamesOpen && <button className="GiveCursor" onFocus={this.showFilters} ref={this.filter4Ref} onBlur={this.hideFilters} 
-                                                                onClick={(e) => {e.preventDefault(); e.target.focus();}}onContextMenu={this.noBlur} >Names open.</button>}
                             </form>
 
                             : <form>
