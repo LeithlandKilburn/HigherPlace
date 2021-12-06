@@ -12,20 +12,18 @@ class Search extends Component
         this.inputRef = React.createRef();
         this.filter1Ref = React.createRef();
         this.filter2Ref = React.createRef();
-        this.filter3Ref = React.createRef();
-        this.filter4Ref = React.createRef();
+        this.searchRef = React.createRef();
+        this.check1Ref = React.createRef();
         this.state =
         {
             searchClicked: false,
             searchFilter: "Name",
             searchObject: {
-                ArtistName: "",
                 Location: "",
                 Artistry: "",
                 Affinity: "",
                 Names: "",
             },
-            ArtistName: "",
             LocationOpen: false,
             ArtistryOpen: false,
             AffinityOpen: false,
@@ -36,7 +34,7 @@ class Search extends Component
     showFilters = (e) =>
     {
         e.target.focus();
-        console.log("Filter OnFilter OnFocussss");
+        console.log(document.activeElement);
         this.setState(
             {
                 ...this.state,
@@ -47,12 +45,20 @@ class Search extends Component
 
     hideFilters = (e) =>
     {
-        e.target.blur();
-        console.log("On Blurrr. New target is: ", e.relatedTarget, this.filter1Ref.current);
+        if(e.relatedTarget !== null) {e.relatedTarget.focus()};
+        console.log("On Blurrr. New target is: ", e.relatedTarget, this.check1Ref.current, document.activeElement.tagName);
         if ((e.relatedTarget === this.filter1Ref.current || e.relatedTarget === this.filter2Ref.current ||
-            e.relatedTarget === this.filter3Ref.current || e.relatedTarget === this.filter4Ref.current) && e.relatedTarget !== null)
+            e.relatedTarget === this.searchRef.current || e.relatedTarget === this.check1Ref.current) && e.relatedTarget !== null)
         {
             console.log("Not blurring cuz we're in a dropdown.");
+        } else if (document.activeElement.tagName === "BODY")
+        {
+            this.setState(
+                {
+                    ...this.state,
+                    searchClicked: false,
+                }
+            )
         } else
         {
             this.setState(
@@ -283,6 +289,7 @@ class Search extends Component
         }
 
         console.log(this.state);
+        console.log(document.activeElement.tagName);
 
         const searchFilters = (this.state.searchClicked) ? 
 
@@ -291,7 +298,7 @@ class Search extends Component
                                     <input id="SearchBarClicked" className="GiveCursor" onChange={this.searchArtist} placeholder="Find An Artist" ref={this.inputRef}
                                     type="text" onFocus={this.showFilters} onBlur={this.hideFilters} value={currentFilter}/>
 
-                                    <button onContextMenu={this.noBlur} onClick={this.searchClick} className="SearchButton GiveCursor"> Search </button>
+                                    <button ref={this.searchRef} onContextMenu={this.noBlur} onClick={this.searchClick} className="SearchButton GiveCursor"> Search </button>
                                 </div>
                                 <div className="SearchFilters" >
                                     <button  value="Location" onBlur={this.hideFilters} 
@@ -308,7 +315,8 @@ class Search extends Component
                                 </div>
                                 {this.state.ArtistryOpen && <div>
                                                                 <form>
-                                                                <select id="ArtistryDrop" className="GiveCursor" ref={this.filter2Ref} value="lime" onBlur={this.hideFilters} onChange={this.handleChange}>
+                                                                <select id="ArtistryDrop" className="GiveCursor" ref={this.filter1Ref} value="lime" 
+                                                                    onChange={this.searchArtist}>
                                                                     <option value="grapefruit">Grapefruit</option>
                                                                     <option value="lime">Lime</option>
                                                                     <option value="coconut">Coconut</option>
@@ -316,8 +324,14 @@ class Search extends Component
                                                                 </select>
                                                                 </form>
                                                             </div>}
-                                {this.state.AffinityOpen && <button onFocus={this.showFilters} className="GiveCursor" ref={this.filter3Ref} onBlur={this.hideFilters} 
-                                                                onClick={(e) => {e.preventDefault(); e.target.focus();}} onContextMenu={this.noBlur} >Affinity open.</button>}
+                                {this.state.AffinityOpen && 
+                                    <form className="GiveCursor"  tabIndex="0" ref={this.filter2Ref} 
+                                           onContextMenu={this.noBlur} >
+                                           <label tabIndex="0" ref={this.check1Ref}>
+                                                <input type="checkbox" onClick={this.noBlur} id="Black" name="Black"/>
+                                                <span>Black</span>
+                                            </label><br/>
+                                    </form>}
                             </form>
 
                             : <form>
