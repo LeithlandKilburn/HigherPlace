@@ -17,7 +17,18 @@
     z-index: 1;
   }
 
+  .SearchFunctions
+  {
+    border-bottom: 1px solid black;
+    height: 4vh;
+  }
+
   #ArtistryDrop
+  {
+    display: inline-block;
+    margin-bottom: 2px;
+  }
+  #RaceDrop, #RegionDrop, #ReligionDrop, #LGBTQDrop
   {
     display: inline-block;
     margin-bottom: 2px;
@@ -58,6 +69,11 @@
     width: 94%;
   }
 
+  .GiveCursor
+  {
+    cursor: pointer;
+  }
+
   .SearchFilters
   {
     display: flex;
@@ -87,7 +103,8 @@
     border: solid 3px rgba(20, 20, 20, 0.9);
   }
 
-  .GiveCursor
+  .AffinityForm
   {
-    cursor: pointer;
+    height: 10vh;
+    overflow-y: scroll;
   }

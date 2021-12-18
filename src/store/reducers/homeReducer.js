@@ -2,7 +2,7 @@ const initState =
 {
     city: "Atlanta",
     cityArtist: null,
-    searchObject: null,
+    searchObject: {AffinityTerm : {null : null}},
     filteredArtists: null,
 }
 

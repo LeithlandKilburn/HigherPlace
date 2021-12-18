@@ -38,7 +38,7 @@ class Home extends Component
 	{
     console.log(this.props);
 
-    if (this.props.searchObject === null)
+    if (!this.props.searchObject.null)
     {
       firebase.auth().onAuthStateChanged( () => {
         if (this.props.city) {
@@ -53,13 +53,10 @@ class Home extends Component
 
   componentDidUpdate = (prevProps, prevState, snapshot) =>
   {
-    if (prevProps.searchObject !== this.props.searchObject)
+    if (prevProps.searchObject.newQueryTest !== this.props.searchObject.newQueryTest )
     {
-      if (this.props.searchObject)
-      {
-        console.log("The Market Has Updated!!");
+        console.log("The Market Has Updated!!", prevProps);
         this.props.filterArtists(this.props.searchObject);
-      }
     }
     console.log(this.props.searchObject);
   }
@@ -81,6 +78,7 @@ class Home extends Component
 			marketArtists.map(higherArtist => <HigherArtists key={higherArtist.userID}
         goProfile={this.goProfile} artistInfo={higherArtist}/> )
 			) : <p>No artists in your area.</p>
+      console.log(higherArtists);
 
       this.props.searchObject ? console.log(this.props.searchObject) : console.log("Nothing");
     
@@ -88,7 +86,7 @@ class Home extends Component
      
         <div className="HomeScreen">
 
-          <Search/>
+          <Search homeCity={this.props.city}/>
 
           <div className="HomeProfiles" style={{
               overflow: 'scroll',
@@ -101,38 +99,9 @@ class Home extends Component
                       </div>
                     </div>
                   </Paper>
-                  
-                
-                  <Paper className="PaperScroll">  
-                  <div className="profession"><h5>Videographers</h5></div>
-                    <div className="scrolling-wrapper">
-                        <div className='hs'>
-                        {higherArtists}
-                        </div>
-                      </div>
-                  </Paper>
-              
-                  <Paper className="PaperScroll">
-                  <div className="profession"><h5>Graphic Designers</h5></div>
-                      <div className="scrolling-wrapper">
-                          <div className='hs'>
-                          {higherArtists}
-                          </div>
-                        </div>
-                  </Paper>
-                                
 
                   <Paper className="PaperScroll">
-                  <div className="profession"><h5>Models</h5></div>
-                      <div className="scrolling-wrapper">
-                          <div className='hs'>
-                            {higherArtists}
-                          </div>
-                        </div>
-                  </Paper>
-                  
-                  <Paper className="PaperScroll">
-                    <div className="profession"><h5>Makeup Artists</h5></div>
+                    <div className="profession"><h5>Videographers</h5></div>
 
                           <div className="scrolling-wrapper">
                             <div className='hs'>
@@ -142,6 +111,43 @@ class Home extends Component
                     </Paper>
 
                     <Paper className="PaperScroll">
+                    <div className="profession"><h5>Graphic Designers</h5></div>
+
+                          <div className="scrolling-wrapper">
+                            <div className='hs'>
+                             {higherArtists}
+                            </div>
+                          </div>
+                    </Paper>
+
+                    <Paper className="PaperScroll">
+                    <div className="profession"><h5>Painters</h5></div>
+                        <div className="scrolling-wrapper">
+                            <div className='hs'>
+                            {higherArtists}
+                            </div>
+                          </div>
+                    </Paper>
+                
+                  <Paper className="PaperScroll">  
+                  <div className="profession"><h5>Makeup Artists</h5></div>
+                    <div className="scrolling-wrapper">
+                        <div className='hs'>
+                        {higherArtists}
+                        </div>
+                      </div>
+                  </Paper>
+
+                  <Paper className="PaperScroll">
+                  <div className="profession"><h5>Models</h5></div>
+                      <div className="scrolling-wrapper">
+                          <div className='hs'>
+                            {higherArtists}
+                          </div>
+                        </div>
+                  </Paper>
+              
+                  <Paper className="PaperScroll">
                     <div className="profession"><h5>Makeup Artists</h5></div>
                         <div className="scrolling-wrapper">
                             <div className='hs'>
