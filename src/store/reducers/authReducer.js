@@ -37,6 +37,12 @@ const authReducer = (state = initState, action) =>
                 ...state,
                 authError: action.err.message
             }
+        case 'ART_CONT':
+            console.log("Continue Sign Up For Artist")
+            return {
+                ...state,
+                tempAcc: action.tempAcc,
+            }
         case 'LOGOUT':
             console.log("Logged Out")
             return {

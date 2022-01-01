@@ -8,6 +8,7 @@ import { Paper} from '@material-ui/core/';
 import { getArtists, filterArtists } from '../../store/actions/homeActions';
 import { getArtist } from '../../store/actions/galleryActions';
 import { firebase } from '../../config/fbConfig';
+import PayRequest from './payment/PayRequest';
 
 class Home extends Component
 {
@@ -121,7 +122,7 @@ class Home extends Component
                     </Paper>
 
                     <Paper className="PaperScroll">
-                    <div className="profession"><h5>Painters</h5></div>
+                    <div className="profession"><h5>Visual Artists</h5></div>
                         <div className="scrolling-wrapper">
                             <div className='hs'>
                             {higherArtists}

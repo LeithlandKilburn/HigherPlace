@@ -91,7 +91,7 @@ class HigherArtists extends Component
           <div className="ArtistInfo" onClick={this.handleClick}>
             <Avatar id="Avatar" src={bron} alt="Remy"/>
             <p className="QInfo">{this.props.artistInfo.username}</p>
-            <p className="QInfo">{this.props.artistInfo.profession1}</p>
+            <p className="QInfo">{this.props.artistInfo.profession[0]}</p>
             <p className="ArtistStatus">Available</p>
           </div>
       </div>

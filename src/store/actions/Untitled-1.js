@@ -6,7 +6,7 @@
         && !searchObject.AffinityTerm.ReligionTerm && !searchObject.AffinityTerm.LanguageTerm && !(searchObject.AffinityTerm.SexualityTerm 
             || searchObject.AffinityTerm.GenderTerm))
     {
-        db.collection('users').where("ethnicity", "array-contains", searchObject.AffinityTerm.RaceTerm).get().then((snapshot) => {
+        db.collection('users').where("username", "==", searchObject.NamesTerm).where("ethnicity", "array-contains", searchObject.AffinityTerm.RaceTerm).get().then((snapshot) => {
         console.log(snapshot);
         if (searchObject.StyleTerm)
         {
@@ -45,7 +45,7 @@
         && !searchObject.AffinityTerm.ReligionTerm && !searchObject.AffinityTerm.LanguageTerm && !(searchObject.AffinityTerm.SexualityTerm 
             || searchObject.AffinityTerm.GenderTerm))
     {
-        db.collection('users').where("ethnicity", "array-contains", searchObject.AffinityTerm.RegionTerm).get().then((snapshot) => {
+        db.collection('users').where("username", "==", searchObject.NamesTerm).where("ethnicity", "array-contains", searchObject.AffinityTerm.RegionTerm).get().then((snapshot) => {
         console.log(snapshot);
 
         if (searchObject.StyleTerm)
@@ -85,7 +85,7 @@
         && !searchObject.AffinityTerm.ReligionTerm && !searchObject.AffinityTerm.LanguageTerm && !(searchObject.AffinityTerm.SexualityTerm 
             || searchObject.AffinityTerm.GenderTerm))
     {
-        db.collection('users').where("ethnicity", "array-contains", searchObject.AffinityTerm.CountryTerm).get().then((snapshot) => {
+        db.collection('users').where("username", "==", searchObject.NamesTerm).where("ethnicity", "array-contains", searchObject.AffinityTerm.CountryTerm).get().then((snapshot) => {
         console.log(snapshot);
 
         if (searchObject.StyleTerm)
@@ -127,7 +127,7 @@
     {
         if (searchObject.StyleTerm)
         {
-            db.collection('users').where("religion", "==", searchObject.AffinityTerm.ReligionTerm)
+            db.collection('users').where("username", "==", searchObject.NamesTerm).where("religion", "==", searchObject.AffinityTerm.ReligionTerm)
                 .where("styles", "array-contains", searchObject.StyleTerm).get().then((snapshot) => {
                 console.log(snapshot);
 
@@ -146,7 +146,7 @@
                 })
         } else
         {
-            db.collection('users').where("religion", "==", searchObject.AffinityTerm.ReligionTerm)
+            db.collection('users').where("username", "==", searchObject.NamesTerm).where("religion", "==", searchObject.AffinityTerm.ReligionTerm)
                 .where("profession", "array-contains", searchObject.ArtistryTerm).get().then((snapshot) => {
                 console.log(snapshot);
 
@@ -172,7 +172,7 @@
         && !searchObject.AffinityTerm.ReligionTerm && searchObject.AffinityTerm.LanguageTerm && !(searchObject.AffinityTerm.SexualityTerm 
             || searchObject.AffinityTerm.GenderTerm))
     {
-        db.collection('users').where("languages", "array-contains", searchObject.AffinityTerm.LanguageTerm).get().then((snapshot) => {
+        db.collection('users').where("username", "==", searchObject.NamesTerm).where("languages", "array-contains", searchObject.AffinityTerm.LanguageTerm).get().then((snapshot) => {
         console.log(snapshot);
 
         if (searchObject.StyleTerm)
@@ -214,7 +214,7 @@
     {
         if (searchObject.AffinityTerm.SexualityTerm)
         {
-            db.collection('users').where("sexuality", "==", searchObject.AffinityTerm.SexualityTerm).get().then((snapshot) => {
+            db.collection('users').where("username", "==", searchObject.NamesTerm).where("sexuality", "==", searchObject.AffinityTerm.SexualityTerm).get().then((snapshot) => {
                 console.log(snapshot);
 
                 if (searchObject.StyleTerm)
@@ -248,7 +248,7 @@
                 })
         } else
         {
-            db.collection('users').where("gender", "==", searchObject.AffinityTerm.GenderTerm).get().then((snapshot) => {
+            db.collection('users').where("username", "==", searchObject.NamesTerm).where("gender", "==", searchObject.AffinityTerm.GenderTerm).get().then((snapshot) => {
                 console.log(snapshot);
 
                 if (searchObject.StyleTerm)
@@ -290,7 +290,7 @@
         && searchObject.AffinityTerm.ReligionTerm && !searchObject.AffinityTerm.LanguageTerm && !(searchObject.AffinityTerm.SexualityTerm 
             || searchObject.AffinityTerm.GenderTerm))
     {
-        db.collection('users').where("ethnicity", "array-contains", searchObject.AffinityTerm.RaceTerm)
+        db.collection('users').where("username", "==", searchObject.NamesTerm).where("ethnicity", "array-contains", searchObject.AffinityTerm.RaceTerm)
             .where("religion", "==", searchObject.AffinityTerm.ReligionTerm).get().then((snapshot) => {
         console.log(snapshot);
 
@@ -331,7 +331,7 @@
         && searchObject.AffinityTerm.ReligionTerm && !searchObject.AffinityTerm.LanguageTerm && !(searchObject.AffinityTerm.SexualityTerm 
             || searchObject.AffinityTerm.GenderTerm))
     {
-        db.collection('users').where("ethnicity", "array-contains", searchObject.AffinityTerm.RegionTerm)
+        db.collection('users').where("username", "==", searchObject.NamesTerm).where("ethnicity", "array-contains", searchObject.AffinityTerm.RegionTerm)
             .where("religion", "==", searchObject.AffinityTerm.ReligionTerm).get().then((snapshot) => {
         console.log(snapshot);
 
@@ -372,7 +372,7 @@
         && searchObject.AffinityTerm.ReligionTerm && !searchObject.AffinityTerm.LanguageTerm && !(searchObject.AffinityTerm.SexualityTerm 
             || searchObject.AffinityTerm.GenderTerm))
     {
-        db.collection('users').where("ethnicity", "array-contains", searchObject.AffinityTerm.CountryTerm)
+        db.collection('users').where("username", "==", searchObject.NamesTerm).where("ethnicity", "array-contains", searchObject.AffinityTerm.CountryTerm)
             .where("religion", "==", searchObject.AffinityTerm.ReligionTerm).get().then((snapshot) => {
         console.log(snapshot);
 
@@ -413,7 +413,7 @@
         && !searchObject.AffinityTerm.ReligionTerm && searchObject.AffinityTerm.LanguageTerm && !(searchObject.AffinityTerm.SexualityTerm 
             || searchObject.AffinityTerm.GenderTerm))
     {
-        db.collection('users').where("languages", "array-contains", searchObject.AffinityTerm.LanguageTerm).get().then((snapshot) => {
+        db.collection('users').where("username", "==", searchObject.NamesTerm).where("languages", "array-contains", searchObject.AffinityTerm.LanguageTerm).get().then((snapshot) => {
         console.log(snapshot);
         //FILTER ARTISTS AND RETURN ARRAY OF RACIAL ARTISTS.
         let tempArtists = snapshot.docs.filter(snap => (snap.data().ethnicity.includes(searchObject.AffinityTerm.RaceTerm)));
@@ -457,7 +457,7 @@
         && !searchObject.AffinityTerm.ReligionTerm && searchObject.AffinityTerm.LanguageTerm && !(searchObject.AffinityTerm.SexualityTerm 
             || searchObject.AffinityTerm.GenderTerm))
     {
-        db.collection('users').where("languages", "array-contains", searchObject.AffinityTerm.LanguageTerm).get().then((snapshot) => {
+        db.collection('users').where("username", "==", searchObject.NamesTerm).where("languages", "array-contains", searchObject.AffinityTerm.LanguageTerm).get().then((snapshot) => {
         console.log(snapshot);
         //FILTER ARTISTS AND RETURN ARRAY OF RACIAL ARTISTS.
         let tempArtists = snapshot.docs.filter(snap => (snap.data().ethnicity.includes(searchObject.AffinityTerm.RegionTerm)));
@@ -499,7 +499,7 @@
         && !searchObject.AffinityTerm.ReligionTerm && searchObject.AffinityTerm.LanguageTerm && !(searchObject.AffinityTerm.SexualityTerm 
             || searchObject.AffinityTerm.GenderTerm))
     {
-        db.collection('users').where("languages", "array-contains", searchObject.AffinityTerm.LanguageTerm).get().then((snapshot) => {
+        db.collection('users').where("username", "==", searchObject.NamesTerm).where("languages", "array-contains", searchObject.AffinityTerm.LanguageTerm).get().then((snapshot) => {
         console.log(snapshot);
         //FILTER ARTISTS AND RETURN ARRAY OF RACIAL ARTISTS.
         let tempArtists = snapshot.docs.filter(snap => (snap.data().ethnicity.includes(searchObject.AffinityTerm.CountryTerm)));
@@ -543,7 +543,7 @@
     {
         if (searchObject.AffinityTerm.SexualityTerm)
         {
-            db.collection('users').where("sexuality", "==", searchObject.AffinityTerm.SexualityTerm)
+            db.collection('users').where("username", "==", searchObject.NamesTerm).where("sexuality", "==", searchObject.AffinityTerm.SexualityTerm)
                 .where("ethnicity", "array-contains", searchObject.AffinityTerm.RaceTerm).get().then((snapshot) => {
                 console.log(snapshot);
 
@@ -578,7 +578,7 @@
                 })
         } else
         {
-            db.collection('users').where("gender", "==", searchObject.AffinityTerm.GenderTerm)
+            db.collection('users').where("username", "==", searchObject.NamesTerm).where("gender", "==", searchObject.AffinityTerm.GenderTerm)
                 .where("ethnicity", "array-contains", searchObject.AffinityTerm.RaceTerm).get().then((snapshot) => {
                 console.log(snapshot);
 
@@ -622,7 +622,7 @@
     {
         if (searchObject.AffinityTerm.SexualityTerm)
         {
-            db.collection('users').where("sexuality", "==", searchObject.AffinityTerm.SexualityTerm)
+            db.collection('users').where("username", "==", searchObject.NamesTerm).where("sexuality", "==", searchObject.AffinityTerm.SexualityTerm)
                 .where("ethnicity", "array-contains", searchObject.AffinityTerm.RegionTerm).get().then((snapshot) => {
                 console.log(snapshot);
 
@@ -657,7 +657,7 @@
                 })
         } else
         {
-            db.collection('users').where("gender", "==", searchObject.AffinityTerm.GenderTerm)
+            db.collection('users').where("username", "==", searchObject.NamesTerm).where("gender", "==", searchObject.AffinityTerm.GenderTerm)
                 .where("ethnicity", "array-contains", searchObject.AffinityTerm.RegionTerm).get().then((snapshot) => {
                 console.log(snapshot);
 
@@ -701,7 +701,7 @@
     {
         if (searchObject.AffinityTerm.SexualityTerm)
         {
-            db.collection('users').where("sexuality", "==", searchObject.AffinityTerm.SexualityTerm)
+            db.collection('users').where("username", "==", searchObject.NamesTerm).where("sexuality", "==", searchObject.AffinityTerm.SexualityTerm)
                 .where("ethnicity", "array-contains", searchObject.AffinityTerm.CountryTerm).get().then((snapshot) => {
                 console.log(snapshot);
 
@@ -736,7 +736,7 @@
                 })
         } else
         {
-            db.collection('users').where("gender", "==", searchObject.AffinityTerm.GenderTerm)
+            db.collection('users').where("username", "==", searchObject.NamesTerm).where("gender", "==", searchObject.AffinityTerm.GenderTerm)
                 .where("ethnicity", "array-contains", searchObject.AffinityTerm.CountryTerm).get().then((snapshot) => {
                 console.log(snapshot);
 
@@ -778,7 +778,7 @@
         && searchObject.AffinityTerm.ReligionTerm && searchObject.AffinityTerm.LanguageTerm && !(searchObject.AffinityTerm.SexualityTerm 
             || searchObject.AffinityTerm.GenderTerm))
     {
-        db.collection('users').where("religion", "==", searchObject.ReligionTerm)
+        db.collection('users').where("username", "==", searchObject.NamesTerm).where("religion", "==", searchObject.ReligionTerm)
             .where("languages", "array-contains", searchObject.AffinityTerm.LanguageTerm).get().then((snapshot) => {
         console.log(snapshot);
 
@@ -819,52 +819,100 @@
         && searchObject.AffinityTerm.ReligionTerm && !searchObject.AffinityTerm.LanguageTerm && (searchObject.AffinityTerm.SexualityTerm 
             || searchObject.AffinityTerm.GenderTerm))
     {
-        if (searchObject.AffinityTerm.SexualityTerm)
+        if (searchObject.StyleTerm)
         {
-            db.collection('users').where("sexuality", "==", searchObject.AffinityTerm.SexualityTerm)
-                .where("religion", "==", searchObject.AffinityTerm.ReligionTerm).where("style", "array-contains", "searchObject.StyleTerm")
-                .get().then((snapshot) => {
-                console.log(snapshot);
-
-                //FILTER ARTISTS AND RETURN ARRAY OF RACIAL ARTISTS.
-                let tempArtists = snapshot.docs.filter(snap => (snap.data().profession.includes(searchObject.ArtistryTerm)));
-                let docArtist;
-                tempArtists.forEach(doc =>  {
-                    docArtist = doc.data();
-                    filteredArtists = [...filteredArtists, docArtist];
-                })
-
-                console.log("Filtering Artists for Home Page", searchObject);
-                dispatch({type: "FILTER_ARTISTS", filteredArtists});
-
-                }).catch((err) => {
-            
-                    //Activate the reducer.
-                    dispatch({type: 'FILTER_ARTISTS_ERROR', err});
-                })
+            if (searchObject.AffinityTerm.SexualityTerm)
+            {
+                db.collection('users').where("username", "==", searchObject.NamesTerm).where("sexuality", "==", searchObject.AffinityTerm.SexualityTerm)
+                    .where("religion", "==", searchObject.AffinityTerm.ReligionTerm).where("style", "array-contains", searchObject.StyleTerm)
+                    .get().then((snapshot) => {
+                    console.log(snapshot);
+    
+                    //FILTER ARTISTS AND RETURN ARRAY OF RACIAL ARTISTS.
+                    let tempArtists = snapshot.docs.filter(snap => (snap.data().profession.includes(searchObject.ArtistryTerm)));
+                    let docArtist;
+                    tempArtists.forEach(doc =>  {
+                        docArtist = doc.data();
+                        filteredArtists = [...filteredArtists, docArtist];
+                    })
+    
+                    console.log("Filtering Artists for Home Page", tempArtists);
+                    dispatch({type: "FILTER_ARTISTS", filteredArtists});
+    
+                    }).catch((err) => {
+                
+                        //Activate the reducer.
+                        dispatch({type: 'FILTER_ARTISTS_ERROR', err});
+                    })
+            } else
+            {
+                db.collection('users').where("username", "==", searchObject.NamesTerm).where("gender", "==", searchObject.AffinityTerm.GenderTerm)
+                    .where("religion", "==", searchObject.AffinityTerm.ReligionTerm).where("style", "array-contains", searchObject.StyleTerm)
+                    .get().then((snapshot) => {
+                    console.log(snapshot);
+    
+                    //FILTER ARTISTS AND RETURN ARRAY OF RACIAL ARTISTS.
+                    let tempArtists = snapshot.docs.filter(snap => (snap.data().profession.includes(searchObject.ArtistryTerm)));
+                    let docArtist;
+                    tempArtists.forEach(doc =>  {
+                        docArtist = doc.data();
+                        filteredArtists = [...filteredArtists, docArtist];
+                    })
+    
+                    console.log("Filtering Artists for Home Page", searchObject);
+                    dispatch({type: "FILTER_ARTISTS", filteredArtists});
+    
+                    }).catch((err) => {
+                
+                        //Activate the reducer.
+                        dispatch({type: 'FILTER_ARTISTS_ERROR', err});
+                    })
+            }
         } else
         {
-            db.collection('users').where("gender", "==", searchObject.AffinityTerm.GenderTerm)
-                .where("religion", "==", searchObject.AffinityTerm.ReligionTerm).where("style", "array-contains", "searchObject.StyleTerm")
-                .get().then((snapshot) => {
-                console.log(snapshot);
-
-                //FILTER ARTISTS AND RETURN ARRAY OF RACIAL ARTISTS.
-                let tempArtists = snapshot.docs.filter(snap => (snap.data().profession.includes(searchObject.ArtistryTerm)));
-                let docArtist;
-                tempArtists.forEach(doc =>  {
-                    docArtist = doc.data();
-                    filteredArtists = [...filteredArtists, docArtist];
-                })
-
-                console.log("Filtering Artists for Home Page", searchObject);
-                dispatch({type: "FILTER_ARTISTS", filteredArtists});
-
-                }).catch((err) => {
-            
-                    //Activate the reducer.
-                    dispatch({type: 'FILTER_ARTISTS_ERROR', err});
-                })
+            if (searchObject.AffinityTerm.SexualityTerm)
+            {
+                db.collection('users').where("username", "==", searchObject.NamesTerm).where("sexuality", "==", searchObject.AffinityTerm.SexualityTerm)
+                    .where("religion", "==", searchObject.AffinityTerm.ReligionTerm).where("profession", "array-contains", searchObject.ArtistryTerm)
+                    .get().then((snapshot) => {
+                    console.log(snapshot);
+    
+                    let docArtist;
+                    snapshot.docs.forEach(doc =>  {
+                        docArtist = doc.data();
+                        filteredArtists = [...filteredArtists, docArtist];
+                    })
+    
+                    console.log("Filtering Artists for Home Page", docArtist);
+                    dispatch({type: "FILTER_ARTISTS", filteredArtists});
+    
+                    }).catch((err) => {
+                
+                        //Activate the reducer.
+                        dispatch({type: 'FILTER_ARTISTS_ERROR', err});
+                    })
+            } else
+            {
+                db.collection('users').where("username", "==", searchObject.NamesTerm).where("gender", "==", searchObject.AffinityTerm.GenderTerm)
+                    .where("religion", "==", searchObject.AffinityTerm.ReligionTerm).where("profession", "array-contains", searchObject.ArtistryTerm)
+                    .get().then((snapshot) => {
+                    console.log(snapshot);
+    
+                    let docArtist;
+                    snapshot.docs.forEach(doc =>  {
+                        docArtist = doc.data();
+                        filteredArtists = [...filteredArtists, docArtist];
+                    })
+    
+                    console.log("Filtering Artists for Home Page", searchObject);
+                    dispatch({type: "FILTER_ARTISTS", filteredArtists});
+    
+                    }).catch((err) => {
+                
+                        //Activate the reducer.
+                        dispatch({type: 'FILTER_ARTISTS_ERROR', err});
+                    })
+            }
         }
     }
     /*-----------------------------------------------------------------------------------------------------------------------------------
@@ -876,7 +924,7 @@
     {
         if (searchObject.AffinityTerm.SexualityTerm)
         {
-            db.collection('users').where("sexuality", "==", searchObject.AffinityTerm.SexualityTerm)
+            db.collection('users').where("username", "==", searchObject.NamesTerm).where("sexuality", "==", searchObject.AffinityTerm.SexualityTerm)
             .where("languages", "array-contains", searchObject.AffinityTerm.LanguageTerm).get().then((snapshot) => {
                 console.log(snapshot);
 
@@ -911,7 +959,7 @@
                 })
         } else
         {
-            db.collection('users').where("gender", "==", searchObject.AffinityTerm.GenderTerm)
+            db.collection('users').where("username", "==", searchObject.NamesTerm).where("gender", "==", searchObject.AffinityTerm.GenderTerm)
                 .where("languages", "array-contains", searchObject.AffinityTerm.LanguageTerm).get().then((snapshot) => {
                 console.log(snapshot);
 
@@ -953,7 +1001,7 @@
         && searchObject.AffinityTerm.ReligionTerm && searchObject.AffinityTerm.LanguageTerm && !(searchObject.AffinityTerm.SexualityTerm 
             || searchObject.AffinityTerm.GenderTerm))
     {
-        db.collection('users').where("languages", "array-contains", searchObject.AffinityTerm.LanguageTerm)
+        db.collection('users').where("username", "==", searchObject.NamesTerm).where("languages", "array-contains", searchObject.AffinityTerm.LanguageTerm)
             .where("religion", "==", searchObject.AffinityTerm.ReligionTerm).get().then((snapshot) => {
         console.log(snapshot);
 
@@ -997,7 +1045,7 @@
         && searchObject.AffinityTerm.ReligionTerm && searchObject.AffinityTerm.LanguageTerm && !(searchObject.AffinityTerm.SexualityTerm 
             || searchObject.AffinityTerm.GenderTerm))
     {
-        db.collection('users').where("languages", "array-contains", searchObject.AffinityTerm.LanguageTerm)
+        db.collection('users').where("username", "==", searchObject.NamesTerm).where("languages", "array-contains", searchObject.AffinityTerm.LanguageTerm)
             .where("religion", "==", searchObject.AffinityTerm.ReligionTerm).get().then((snapshot) => {
         console.log(snapshot);
 
@@ -1041,7 +1089,7 @@
         && searchObject.AffinityTerm.ReligionTerm && searchObject.AffinityTerm.LanguageTerm && !(searchObject.AffinityTerm.SexualityTerm 
             || searchObject.AffinityTerm.GenderTerm))
     {
-        db.collection('users').where("languages", "array-contains", searchObject.AffinityTerm.LanguageTerm)
+        db.collection('users').where("username", "==", searchObject.NamesTerm).where("languages", "array-contains", searchObject.AffinityTerm.LanguageTerm)
             .where("religion", "==", searchObject.AffinityTerm.ReligionTerm).get().then((snapshot) => {
         console.log(snapshot);
 
@@ -1087,7 +1135,7 @@
     {
         if (searchObject.AffinityTerm.SexualityTerm)
         {
-            db.collection('users').where("sexuality", "==", searchObject.AffinityTerm.SexualityTerm)
+            db.collection('users').where("username", "==", searchObject.NamesTerm).where("sexuality", "==", searchObject.AffinityTerm.SexualityTerm)
                 .where("religion", "==", searchObject.AffinityTerm.ReligionTerm)
                     .where("languages", "array-contains", searchObject.AffinityTerm.LanguageTerm).get().then((snapshot) => {
                 console.log(snapshot);
@@ -1123,7 +1171,7 @@
                 })
         } else
         {
-            db.collection('users').where("gender", "==", searchObject.AffinityTerm.GenderTerm)
+            db.collection('users').where("username", "==", searchObject.NamesTerm).where("gender", "==", searchObject.AffinityTerm.GenderTerm)
                 .where("religion", "==", searchObject.AffinityTerm.ReligionTerm)
                     .where("languages", "array-contains", searchObject.AffinityTerm.LanguageTerm).get().then((snapshot) => {  
                 console.log(snapshot);
@@ -1168,7 +1216,7 @@
     {
         if (searchObject.AffinityTerm.SexualityTerm)
         {
-            db.collection('users').where("languages", "array-contains", searchObject.AffinityTerm.LanguageTerm)
+            db.collection('users').where("username", "==", searchObject.NamesTerm).where("languages", "array-contains", searchObject.AffinityTerm.LanguageTerm)
                 .where("sexuality", "==", searchObject.AffinityTerm.SexualityTerm).get().then((snapshot) => {
             console.log(snapshot);
 
@@ -1206,7 +1254,7 @@
             })
         } else
         {
-            db.collection('users').where("languages", "array-contains", searchObject.AffinityTerm.LanguageTerm)
+            db.collection('users').where("username", "==", searchObject.NamesTerm).where("languages", "array-contains", searchObject.AffinityTerm.LanguageTerm)
                 .where("gender", "==", searchObject.AffinityTerm.GenderTerm).get().then((snapshot) => {
             console.log(snapshot);
 
@@ -1253,7 +1301,7 @@
     {
         if (searchObject.AffinityTerm.SexualityTerm)
         {
-            db.collection('users').where("languages", "array-contains", searchObject.AffinityTerm.LanguageTerm)
+            db.collection('users').where("username", "==", searchObject.NamesTerm).where("languages", "array-contains", searchObject.AffinityTerm.LanguageTerm)
                 .where("sexuality", "==", searchObject.AffinityTerm.SexualityTerm).get().then((snapshot) => {
             console.log(snapshot);
 
@@ -1291,7 +1339,7 @@
             })
         } else
         {
-            db.collection('users').where("languages", "array-contains", searchObject.AffinityTerm.LanguageTerm)
+            db.collection('users').where("username", "==", searchObject.NamesTerm).where("languages", "array-contains", searchObject.AffinityTerm.LanguageTerm)
                 .where("gender", "==", searchObject.AffinityTerm.GenderTerm).get().then((snapshot) => {
             console.log(snapshot);
 
@@ -1338,7 +1386,7 @@
     {
         if (searchObject.AffinityTerm.SexualityTerm)
         {
-            db.collection('users').where("languages", "array-contains", searchObject.AffinityTerm.LanguageTerm)
+            db.collection('users').where("username", "==", searchObject.NamesTerm).where("languages", "array-contains", searchObject.AffinityTerm.LanguageTerm)
                 .where("sexuality", "==", searchObject.AffinityTerm.SexualityTerm).get().then((snapshot) => {
             console.log(snapshot);
 
@@ -1376,7 +1424,7 @@
             })
         } else
         {
-            db.collection('users').where("languages", "array-contains", searchObject.AffinityTerm.LanguageTerm)
+            db.collection('users').where("username", "==", searchObject.NamesTerm).where("languages", "array-contains", searchObject.AffinityTerm.LanguageTerm)
                 .where("gender", "==", searchObject.AffinityTerm.GenderTerm).get().then((snapshot) => {
             console.log(snapshot);
 
@@ -1423,7 +1471,7 @@
     {
         if (searchObject.AffinityTerm.SexualityTerm)
         {
-            db.collection('users').where("religion", "==", searchObject.AffinityTerm.ReligionTerm)
+            db.collection('users').where("username", "==", searchObject.NamesTerm).where("religion", "==", searchObject.AffinityTerm.ReligionTerm)
                 .where("sexuality", "==", searchObject.AffinityTerm.SexualityTerm)
                 .where("ethnicity", "array-contains", searchObject.AffinityTerm.RaceTerm).get().then((snapshot) => {
             console.log(snapshot);
@@ -1459,7 +1507,7 @@
             })
         } else
         {
-            db.collection('users').where("religion", "==", searchObject.AffinityTerm.ReligionTerm)
+            db.collection('users').where("username", "==", searchObject.NamesTerm).where("religion", "==", searchObject.AffinityTerm.ReligionTerm)
                 .where("gender", "==", searchObject.AffinityTerm.GenderTerm)
                 .where("ethnicity", "array-contains", searchObject.AffinityTerm.RaceTerm).get().then((snapshot) => {
             console.log(snapshot);
@@ -1504,7 +1552,7 @@
     {
         if (searchObject.AffinityTerm.SexualityTerm)
         {
-            db.collection('users').where("religion", "==", searchObject.AffinityTerm.ReligionTerm)
+            db.collection('users').where("username", "==", searchObject.NamesTerm).where("religion", "==", searchObject.AffinityTerm.ReligionTerm)
                 .where("sexuality", "==", searchObject.AffinityTerm.SexualityTerm)
                 .where("ethnicity", "array-contains", searchObject.AffinityTerm.RegionTerm).get().then((snapshot) => {
             console.log(snapshot);
@@ -1540,7 +1588,7 @@
             })
         } else
         {
-            db.collection('users').where("religion", "==", searchObject.AffinityTerm.ReligionTerm)
+            db.collection('users').where("username", "==", searchObject.NamesTerm).where("religion", "==", searchObject.AffinityTerm.ReligionTerm)
                 .where("gender", "==", searchObject.AffinityTerm.GenderTerm)
                 .where("ethnicity", "array-contains", searchObject.AffinityTerm.RegionTerm).get().then((snapshot) => {
             console.log(snapshot);
@@ -1585,7 +1633,7 @@
     {
         if (searchObject.AffinityTerm.SexualityTerm)
         {
-            db.collection('users').where("religion", "==", searchObject.AffinityTerm.ReligionTerm)
+            db.collection('users').where("username", "==", searchObject.NamesTerm).where("religion", "==", searchObject.AffinityTerm.ReligionTerm)
                 .where("sexuality", "==", searchObject.AffinityTerm.SexualityTerm)
                 .where("ethnicity", "array-contains", searchObject.AffinityTerm.CountryTerm).get().then((snapshot) => {
             console.log(snapshot);
@@ -1621,7 +1669,7 @@
             })
         } else
         {
-            db.collection('users').where("religion", "==", searchObject.AffinityTerm.ReligionTerm)
+            db.collection('users').where("username", "==", searchObject.NamesTerm).where("religion", "==", searchObject.AffinityTerm.ReligionTerm)
                 .where("gender", "==", searchObject.AffinityTerm.GenderTerm)
                 .where("ethnicity", "array-contains", searchObject.AffinityTerm.CountryTerm).get().then((snapshot) => {
             console.log(snapshot);
@@ -1666,7 +1714,7 @@
     {
         if (searchObject.AffinityTerm.SexualityTerm)
         {
-            db.collection('users').where("languages", "array-contains", searchObject.AffinityTerm.LanguageTerm)
+            db.collection('users').where("username", "==", searchObject.NamesTerm).where("languages", "array-contains", searchObject.AffinityTerm.LanguageTerm)
                 .where("religion", "==", searchObject.AffinityTerm.ReligionTerm)
                 .where("sexuality", "==", searchObject.AffinityTerm.SexualityTerm).get().then((snapshot) => {
             console.log(snapshot);
@@ -1705,7 +1753,7 @@
             })
         } else
         {
-            db.collection('users').where("languages", "array-contains", searchObject.AffinityTerm.LanguageTerm)
+            db.collection('users').where("username", "==", searchObject.NamesTerm).where("languages", "array-contains", searchObject.AffinityTerm.LanguageTerm)
                 .where("religion", "==", searchObject.AffinityTerm.ReligionTerm)
                 .where("gender", "==", searchObject.AffinityTerm.GenderTerm).get().then((snapshot) => {
             console.log(snapshot);
@@ -1753,7 +1801,7 @@
     {
         if (searchObject.AffinityTerm.SexualityTerm)
         {
-            db.collection('users').where("languages", "array-contains", searchObject.AffinityTerm.LanguageTerm)
+            db.collection('users').where("username", "==", searchObject.NamesTerm).where("languages", "array-contains", searchObject.AffinityTerm.LanguageTerm)
                 .where("religion", "==", searchObject.AffinityTerm.ReligionTerm)
                 .where("sexuality", "==", searchObject.AffinityTerm.SexualityTerm).get().then((snapshot) => {
             console.log(snapshot);
@@ -1792,7 +1840,7 @@
             })
         } else
         {
-            db.collection('users').where("languages", "array-contains", searchObject.AffinityTerm.LanguageTerm)
+            db.collection('users').where("username", "==", searchObject.NamesTerm).where("languages", "array-contains", searchObject.AffinityTerm.LanguageTerm)
                 .where("religion", "==", searchObject.AffinityTerm.ReligionTerm)
                 .where("gender", "==", searchObject.AffinityTerm.GenderTerm).get().then((snapshot) => {
             console.log(snapshot);
@@ -1840,7 +1888,7 @@
     {
         if (searchObject.AffinityTerm.SexualityTerm)
         {
-            db.collection('users').where("languages", "array-contains", searchObject.AffinityTerm.LanguageTerm)
+            db.collection('users').where("username", "==", searchObject.NamesTerm).where("languages", "array-contains", searchObject.AffinityTerm.LanguageTerm)
                 .where("religion", "==", searchObject.AffinityTerm.ReligionTerm)
                 .where("sexuality", "==", searchObject.AffinityTerm.SexualityTerm).get().then((snapshot) => {
             console.log(snapshot);
@@ -1879,7 +1927,7 @@
             })
         } else
         {
-            db.collection('users').where("languages", "array-contains", searchObject.AffinityTerm.LanguageTerm)
+            db.collection('users').where("username", "==", searchObject.NamesTerm).where("languages", "array-contains", searchObject.AffinityTerm.LanguageTerm)
                 .where("religion", "==", searchObject.AffinityTerm.ReligionTerm)
                 .where("gender", "==", searchObject.AffinityTerm.GenderTerm).get().then((snapshot) => {
             console.log(snapshot);

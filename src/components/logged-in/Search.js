@@ -595,7 +595,8 @@ class Search extends Component
                             <option value="Photographer">Photographer</option>
                             <option value="Videographer">Videographer</option>
                             <option value="Graphic Designer">Graphic Designer</option>
-                            <option value="Painter">Painters</option>
+                            <option value="Visual Artist">Visual Artists</option>
+                            <option value="Fashion Designer">Fashion Designer</option>
                             <option value="Makeup Artist">Makeup Artists</option>
                             <option value="Model">Models</option>
                     </select>
@@ -624,7 +625,8 @@ class Search extends Component
                                 <option value="Photographer">Photographer</option>
                                 <option value="Videographer">Videographer</option>
                                 <option value="Graphic Designer">Graphic Designer</option>
-                                <option value="Painter">Painters</option>
+                                <option value="Visual Artist">Visual Artists</option>
+                                <option value="Fashion Designer">Fashion Designer</option>
                                 <option value="Makeup Artist">Makeup Artists</option>
                                 <option value="Model">Models</option>
                             </select>
@@ -649,7 +651,8 @@ class Search extends Component
                                 <option value="Photographer">Photographer</option>
                                 <option value="Videographer">Videographer</option>
                                 <option value="Graphic Designer">Graphic Designer</option>
-                                <option value="Painter">Painters</option>
+                                <option value="Visual Artist">Visual Artists</option>
+                                <option value="Fashion Designer">Fashion Designer</option>
                                 <option value="Makeup Artist">Makeup Artists</option>
                                 <option value="Model">Models</option>
                             </select>
@@ -671,7 +674,8 @@ class Search extends Component
                                 <option value="Photographer">Photographer</option>
                                 <option value="Videographer">Videographer</option>
                                 <option value="Graphic Designer">Graphic Designer</option>
-                                <option value="Painter">Painters</option>
+                                <option value="Visual Artist">Visual Artists</option>
+                                <option value="Fashion Designer">Fashion Designer</option>
                                 <option value="Makeup Artist">Makeup Artists</option>
                                 <option value="Model">Models</option>
                             </select>
@@ -687,6 +691,33 @@ class Search extends Component
                             </select>
                         </form>
                 break;
+                case "Fashion Designer":
+                    artDrop = <form onSubmit={this.formSubmit}>
+                                <select id="ArtistryDrop" className="GiveCursor" ref={this.filter1Ref} 
+                                    value={this.state.ArtistryTerm} onChange={this.setSearchTerm}>
+                                    <option value="">Select A Profession</option>
+                                    <option value="Photographer">Photographer</option>
+                                    <option value="Videographer">Videographer</option>
+                                    <option value="Graphic Designer">Graphic Designer</option>
+                                    <option value="Visual Artist">Visual Artists</option>
+                                    <option value="Fashion Designer">Fashion Designer</option>
+                                    <option value="Makeup Artist">Makeup Artists</option>
+                                    <option value="Model">Models</option>
+                                </select>
+                    
+                                <select id="ArtistryDrop" className="GiveCursor" ref={this.art1Ref} 
+                                    value={this.state.StyleTerm} onChange={this.setStyleTerm}>
+                                    <option value="">Select A Genre (Optional)</option>
+                                    <option value="Cultural Clothing">Cultural Clothing</option>
+                                    <option value="Dresses">Dresses</option>
+                                    <option value="Jackets">Jackets</option>
+                                    <option value="Shoes">Shoes</option>
+                                    <option value="Embroidery">Embroidery</option>
+                                    <option value="Bleach">Bleach</option>
+                                    <option value="Tie-Dye">Tie-Dye</option>
+                                </select>
+                            </form>
+                    break;
             case "Model":
                 artDrop = <form onSubmit={this.formSubmit}>
                             <select id="ArtistryDrop" className="GiveCursor" ref={this.filter1Ref} 
@@ -695,7 +726,8 @@ class Search extends Component
                                 <option value="Photographer">Photographer</option>
                                 <option value="Videographer">Videographer</option>
                                 <option value="Graphic Designer">Graphic Designer</option>
-                                <option value="Painter">Painters</option>
+                                <option value="Visual Artist">Visual Artists</option>
+                                <option value="Fashion Designer">Fashion Designer</option>
                                 <option value="Makeup Artist">Makeup Artists</option>
                                 <option value="Model">Models</option>
                             </select>
@@ -709,7 +741,7 @@ class Search extends Component
                             </select>
                         </form>
                 break;
-            case "Painter":
+            case "Visual Artist":
                 artDrop = <form onSubmit={this.formSubmit}>
                             <select id="ArtistryDrop" className="GiveCursor" ref={this.filter1Ref} 
                                 value={this.state.ArtistryTerm} onChange={this.setSearchTerm}>
@@ -717,7 +749,8 @@ class Search extends Component
                                 <option value="Photographer">Photographer</option>
                                 <option value="Videographer">Videographer</option>
                                 <option value="Graphic Designer">Graphic Designer</option>
-                                <option value="Painter">Painters</option>
+                                <option value="Visual Artist">Visual Artists</option>
+                                <option value="Fashion Designer">Fashion Designer</option>
                                 <option value="Makeup Artist">Makeup Artists</option>
                                 <option value="Model">Models</option>
                             </select>
@@ -725,11 +758,11 @@ class Search extends Component
                             <select id="ArtistryDrop" className="GiveCursor" ref={this.art1Ref} 
                                 value={this.state.StyleTerm} onChange={this.setStyleTerm}>
                                 <option value="">Select A Genre (Optional)</option>
-                                <option value="portraits">Portraits</option>
-                                <option value="anime">Anime/Cartoons</option>
-                                <option value="nature">Nature/City</option>
-                                <option value="abstract">Abstract</option>
-                                <option value="large">Large Canvas</option>
+                                <option value="painter">Painter</option>
+                                <option value="illustrator">Illustrator</option>
+                                <option value="3d">3D/Sculpting</option>
+                                <option value="ceramic">Ceramics</option>
+                                <option value="large">Large Form</option>
                                 <option value="framed">Framed</option>
                             </select>
                         </form> 
@@ -742,7 +775,8 @@ class Search extends Component
                             <option value="Photographer">Photographer</option>
                             <option value="Videographer">Videographer</option>
                             <option value="Graphic Designer">Graphic Designer</option>
-                            <option value="Painter">Painters</option>
+                            <option value="Visual Artist">Visual Artists</option>
+                            <option value="Fashion Designer">Fashion Designer</option>
                             <option value="Makeup Artist">Makeup Artists</option>
                             <option value="Model">Models</option>
                         </select>

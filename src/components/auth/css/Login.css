@@ -1,0 +1,39 @@
+.AccFinish
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.AccButtons
+{
+    margin-top: 4px;
+    height: 6vh;
+    width: 30vw;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+.ArtistInfo
+{
+    margin: 0px 10px 0px 5px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.proSelect
+{
+    display: block;
+    border: solid 1px #555;
+}
+
+.proSelect:first-of-type
+{
+    margin-bottom: 10px;
+}
+
+.styleSelText
+{
+    display: inline-block;
+}

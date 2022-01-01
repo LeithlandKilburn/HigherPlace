@@ -4,16 +4,24 @@ export const createProject = (project) =>
 {
     return(dispatch, getState, { getFirebase, getFirestore }) => 
     {
+        const firebase = getFirebase();
         const firestore = getFirestore();
         console.log(project.projectID);
         firestore.collection('projects').doc(`${project.projectID}`).set({
             ...project, 
-        }).then(() => {
-            console.log("fileUploaded");
-            dispatch({type: 'CREATE_PROJECT', project});
-        }).catch((err) => {
-            dispatch({type: 'CREATE_PROJECT_ERROR', err});
-        })
+        }).then(() => 
+            {
+                console.log("fileUploaded");
+                firestore.collection('users').doc(project.userID).update({
+                    projectPreviews: firebase.firestore.FieldValue.arrayUnion(project.thumbnail)
+                }).then( () => 
+                {
+                    dispatch({type: 'CREATE_PROJECT', project});
+                }).catch((err) => 
+                {
+                    dispatch({type: 'CREATE_PROJECT_ERROR', err});
+                })
+            })
         
     }
 };
