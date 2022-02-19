@@ -46,7 +46,7 @@ class Home extends Component
           this.props.getArtists(this.props.city);
         }
         else {
-          return
+          this.props.getArtists("new york");
         }
       })
     }
@@ -66,9 +66,6 @@ class Home extends Component
 
   render ()
   {
-    //Route gaurding
-    const { auth } = this.props;
-    if (!auth.uid) return <Redirect to='/login'/>
 
 
     //Choose Home or Filtered Artists.
@@ -106,7 +103,6 @@ class Home extends Component
 
                           <div className="scrolling-wrapper">
                             <div className='hs'>
-                             {higherArtists}
                             </div>
                           </div>
                     </Paper>
@@ -116,7 +112,6 @@ class Home extends Component
 
                           <div className="scrolling-wrapper">
                             <div className='hs'>
-                             {higherArtists}
                             </div>
                           </div>
                     </Paper>
@@ -125,7 +120,6 @@ class Home extends Component
                     <div className="profession"><h5>Visual Artists</h5></div>
                         <div className="scrolling-wrapper">
                             <div className='hs'>
-                            {higherArtists}
                             </div>
                           </div>
                     </Paper>
@@ -134,16 +128,22 @@ class Home extends Component
                   <div className="profession"><h5>Makeup Artists</h5></div>
                     <div className="scrolling-wrapper">
                         <div className='hs'>
-                        {higherArtists}
                         </div>
                       </div>
                   </Paper>
 
                   <Paper className="PaperScroll">
+                  <div className="profession"><h5>Fashion Designers</h5></div>
+                      <div className="scrolling-wrapper">
+                          <div className='hs'>
+                          </div>
+                        </div>
+                  </Paper>
+                  
+                  <Paper className="PaperScroll">
                   <div className="profession"><h5>Models</h5></div>
                       <div className="scrolling-wrapper">
                           <div className='hs'>
-                            {higherArtists}
                           </div>
                         </div>
                   </Paper>

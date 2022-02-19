@@ -49,6 +49,7 @@ const styles = themes => ({
 		this.hasMounted = true;
 		//Retrieving the current project from the firestore "Projects" collection.
 		const db = firebase.firestore();
+		console.log(this.props.history);
 		db.collection("projects").where("projectID", "==", this.props.history.location.state.projectID).
 		get().then((querySnapshot) => {
 			if (this.hasMounted)
@@ -109,11 +110,7 @@ const styles = themes => ({
     
     render ()
     {
-        //Route gaurding 
-		const { auth } = this.props;
-		if (!auth) return <Redirect to='/login'/>
-
-		const { classes } = this.props;
+        const { classes } = this.props;
         
 		let projectPosts = this.state.projectMedia.map(project => 
 			(( <img src={project} className="extProjPost"></img> ))
@@ -121,17 +118,17 @@ const styles = themes => ({
             
             return (
             <div className="ExtGallery">
-                <ExtProjCard project={this.state.project} user={this.state.user}/>
 				<Paper>
 					<div className="scrolling-wrapperG" style={{
 						position: 'relative',
-						height: '900px',
+						height: '1100px',
 						overflow: 'scroll',
 						marginBottom: '0px'
 					}}>
-					<div className="ExtGalleryContent">
-						{projectPosts}
-					</div>
+						<ExtProjCard project={this.state.project} user={this.state.user}/>
+						<div className="ExtGalleryContent">
+							{projectPosts}
+						</div>
 					</div>
 				</Paper>
 			</div>

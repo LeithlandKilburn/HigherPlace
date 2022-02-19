@@ -25,6 +25,14 @@
     margin-bottom: 0px;
     background-color: #fefefe;
   }
+
+  .PaperScroll 
+  {
+    overflow-y: hidden;
+    margin-bottom: 10px;
+    background-color: #fefefe;
+    height: fit-content;
+  }
   
   .scrolling-wrapper 
   {
@@ -34,14 +42,6 @@
     background-color: #fefefe;
     -ms-overflow-style: none;
     scrollbar-width: none;
-  }
-
-  .PaperScroll 
-  {
-    overflow-y: hidden;
-    margin-bottom: 10px;
-    background-color: #fefefe;
-    height: fit-content;
   }
   
   .hs {

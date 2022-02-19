@@ -5,6 +5,7 @@ export const firebase = require('firebase');
 require('firebase/firestore');
 require('firebase/auth');
 require('firebase/database');
+require('firebase/functions');
 var config = {
   apiKey: "AIzaSyA49718NOYrIcRocpQwGnNNrHRZBIZAngI",
   authDomain: "higherplace-d3623.firebaseapp.com",
@@ -17,3 +18,5 @@ var config = {
 
 firebase.initializeApp(config);
 export const db = firebase.firestore();
+// Initialize Cloud Functions through Firebase
+export const functions = firebase.functions();

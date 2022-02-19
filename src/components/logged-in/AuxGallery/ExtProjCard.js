@@ -50,15 +50,11 @@ class ExtProjCard extends Component
 
 	render()
 	{
-		//Route gaurding
-		const { auth, auth1 } = this.props;
-		if (!auth) return <Redirect to='/login'/>
-		
 		// The User's bio
 		//const { classes } = this.props;
 
 		return(
-			<div className="ProfileCard">
+			<div className="ProfileCardExt">
 				<Paper>
 					<Card className="ExtArtCard">
 						<CardContent className="ExtContent">

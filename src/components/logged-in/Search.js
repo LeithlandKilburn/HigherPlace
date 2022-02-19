@@ -203,7 +203,7 @@ class Search extends Component
         if (this.state.affSelect !== "Language" && this.state.affSelect !== "Ethnicity")
         {
             this.inputRef.current.blur();
-        console.log(e.target, this.aff3Ref);
+            console.log(e.target, this.aff3Ref);
         }
 
         this.setState(
@@ -368,7 +368,7 @@ class Search extends Component
                     affSelect2: "Region",
                     RaceTerm : e.target.value,
                     RegionTerm: "",
-                    whatChanged: {...this.state.whatChanged, RaceTerm : e.target.value},
+                    whatChanged: {...this.state.whatChanged, RaceTerm : e.target.value, RegionTerm: "", CountryTerm: ""},
                 })
         } else
         {
@@ -390,7 +390,7 @@ class Search extends Component
                 affSelect3: "Country",
                 RegionTerm : e.target.value,
                 CountryTerm: "",
-                whatChanged: {...this.state.whatChanged, RegionTerm : e.target.value},
+                whatChanged: {...this.state.whatChanged, RegionTerm : e.target.value, CountryTerm: ""},
             }) 
     }
     
@@ -440,28 +440,29 @@ class Search extends Component
         {
             case "black":
                 regionDrop = ["North America", "Central America", "South America", "West Indies", 
-                                "West Africa", "East Africa", "Central Africa", "South Africa"];
-                regionsArray = regionDrop.map(region => <option value={region}>{region}</option> )
+                                "West Africa", "East Africa", "Central Africa", "South Africa", "North Africa"];
+                regionsArray = regionDrop.map(region => <option value={"B"+region}>{region}</option> )
                 console.log(regionsArray);
                 break;
             case "white":
-                regionDrop = ["North American", "Western Europe", "Eastern Europe"];
-                regionsArray = regionDrop.map(region => <option value={region}>{region}</option> )
+                regionDrop = ["Western Europe", "Eastern Europe", "North America", 
+                                "Central America", "South America", "West Indies", "South Africa"];
+                regionsArray = regionDrop.map(region => <option value={"W"+region}>{region}</option> )
                 console.log(regionsArray);
                 break;
             case "native":
                 regionDrop = ["North America", "South America", "Central America"];
-                regionsArray = regionDrop.map(region => <option value={region}>{region}</option> )
+                regionsArray = regionDrop.map(region => <option value={"I"+region}>{region}</option> )
                 console.log(regionsArray);
                 break;
             case "asian":
                 regionDrop = ["Western Asia", "East Asia", "Southeast Asia", "South Asia", "Pacific Islands"];
-                regionsArray = regionDrop.map(region => <option value={region}>{region}</option> )
+                regionsArray = regionDrop.map(region => <option value={"A"+region}>{region}</option> )
                 console.log(regionsArray);
                 break;
             case "arabic":
-                regionDrop = ["Middle East"];
-                regionsArray = regionDrop.map(region => <option value={region}>{region}</option> )
+                regionDrop = ["Middle East", "North Africa"];
+                regionsArray = regionDrop.map(region => <option value={"M"+region}>{region}</option> )
                 console.log(regionsArray);
                 break;
             default:
@@ -476,11 +477,11 @@ class Search extends Component
                 affDrop =   <form onSubmit={this.formSubmit}>
                                 <select id="RaceDrop" className="GiveCursor" ref={this.eth1Ref} 
                                     value={this.state.RaceTerm} onChange={this.setAffinity}>
-                                    <option value="">Select A Race</option>
-                                    <option value="arabic">Arabic</option>
+                                    <option value="">Select Race</option>
                                     <option value="asian">Asian</option>
-                                    <option value="black">Black/African</option>
-                                    <option value="white">White/European</option>
+                                    <option value="arabic">Middle Eastern/Arabic</option>
+                                    <option value="black">African/Black</option>
+                                    <option value="white">European/White</option>
                                     <option value="native">Indig. American</option>
                                 </select>
                             </form>
@@ -489,11 +490,11 @@ class Search extends Component
                 affDrop =   <form onSubmit={this.formSubmit}>
                                 <select id="RaceDrop" className="GiveCursor" ref={this.eth1Ref} 
                                     value={this.state.RaceTerm} onChange={this.setAffinity}>
-                                    <option value="">Select A Race</option>
-                                    <option value="arabic">Arabic</option>
+                                    <option value="">Select Race</option>
                                     <option value="asian">Asian</option>
-                                    <option value="black">Black/African</option>
-                                    <option value="white">White/European</option>
+                                    <option value="arabic">Middle Eastern/Arabic</option>
+                                    <option value="black">African/Black</option>
+                                    <option value="white">European/White</option>
                                     <option value="native">Indig. American</option>
                                 </select>
                                 <select id="RegionDrop" className="GiveCursor" ref={this.eth2Ref} 
@@ -507,11 +508,11 @@ class Search extends Component
                     affDrop =   <form onSubmit={this.formSubmit}>
                                 <select id="RaceDrop" className="GiveCursor" ref={this.eth1Ref} 
                                     value={this.state.RaceTerm} onChange={this.setAffinity}>
-                                    <option value="">Select A Race</option>
+                                    <option value="">Select Race</option>
                                     <option value="asian">Asian</option>
-                                    <option value="arabic">Arabic/Middle Eastern</option>
-                                    <option value="black">Black/African</option>
-                                    <option value="white">White/European</option>
+                                    <option value="arabic">Middle Eastern/Arabic</option>
+                                    <option value="black">African/Black</option>
+                                    <option value="white">European/White</option>
                                     <option value="native">Indig. American</option>
                                 </select>
                                 <select id="RegionDrop" className="GiveCursor" ref={this.eth2Ref} 

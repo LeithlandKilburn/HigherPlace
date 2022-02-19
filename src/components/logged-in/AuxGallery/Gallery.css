@@ -36,7 +36,7 @@
   margin-left: 25%;
 } */
 
-.scrolling-wrapperG
+.scrolling-wrapperGA
 {
   background-color: #fafafa;
   position: relative;
@@ -75,15 +75,6 @@
 /* Media Queries *//* Media Queries *//* Media Queries */
 /* Media Queries *//* Media Queries *//* Media Queries */
 
-@media screen and (max-width: 320px) {
-  .GalleryContent {
-    margin-bottom: 720px;
-  } 
-}
-
-/* Media Queries *//* Media Queries *//* Media Queries */
-/* Media Queries *//* Media Queries *//* Media Queries */
-
 @media screen and (min-width: 635px)
 {
   .GridItems
@@ -95,22 +86,28 @@
     grid-row-gap: 20px;
     grid-auto-flow: row;
   }
-
-  #GalleryContent
-  {
-    height: fit-content;
-    margin-top: 0px;
-    
-  }
-
-  .scrolling-wrapperG
-  {
-    height: 85vh
-  }
 }
 
 /* Media Queries *//* Media Queries *//* Media Queries */
 /* Media Queries *//* Media Queries *//* Media Queries */
+
+@media screen and (max-width: 400px) {
+  #GalleryContent
+  {
+    height: fit-content;
+    margin-top: 2px;
+    margin-bottom: 60px;
+  }
+}
+
+@media screen and (min-width: 401px) {
+  #GalleryContent
+  {
+    height: fit-content;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
 
 @media screen and (min-width: 1024px)
 {
@@ -129,52 +126,9 @@
     margin-bottom: 200px;
   }
 
-  .scrolling-wrapperG
+  .scrolling-wrapperGA
   {
     height: 85vh;
+    margin-bottom: 0px;
   }
 }
-
-@media screen and (max-height: 640px) {
-  .GalleryContent {
-    margin-bottom: 660px;
-  } 
-}
-
-@media screen and (height: 667px) {
-  .GalleryContent {
-    margin-bottom: 640px;
-  } 
-}
-
-@media screen and (height: 731px) {
-  .GalleryContent {
-    margin-bottom: 572px;
-  } 
-}
-
-@media screen and (height: 736px) {
-  .GalleryContent {
-    margin-bottom: 562px;
-  } 
-}
-
-@media screen and (height: 812px) {
-  .GalleryContent {
-    margin-bottom: 498px;
-  } 
-}
-
-@media screen and (height: 823px) {
-  .GalleryContent {
-    margin-bottom: 480px;
-  } 
-}
-
-@media screen and (height: 1366px) {
-  .GalleryContent {
-    margin-bottom: 40px;
-  } 
-}
-
-

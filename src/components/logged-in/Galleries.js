@@ -40,7 +40,8 @@ class Galleries extends Component
 			if (this.props.artistID) {
 				this.props.getGallery(this.props.artistID);
 			}
-			else {
+			else if (this.props.uid)
+			{
 				this.props.getGallery(this.props.uid);
 				return
 			}
@@ -71,18 +72,17 @@ class Galleries extends Component
 
 	render ()
 	{
-
-		//Route gaurding
-		const loggedIn = this.props.profile.isLoaded;
-		if (!loggedIn) return <Redirect to='/login'/>
-
 		console.log("GALLERIES IS RENDERING")
+
+		if (!this.props.artistID && !this.props.uid)
+		{
+			return <Redirect to='/login'/>
+		}
 		
 		
 		let projectPosts = this.props.projects ? (
 			this.props.projects.map(project => <ProjectPost history={this.props.history} stayOnGallery={this.stayOnGallery}
-				key={project.projectID} 
-				post={project}/> )
+				key={project.projectID} post={project}/> )
 			) : <p>Upload some prjects and show your work to potential clients!</p>
 		
 		return (
@@ -96,7 +96,7 @@ class Galleries extends Component
 					</Tabs>
 				</div>
 				<Paper>
-				<div className="scrolling-wrapperG">
+				<div className="scrolling-wrapperGA">
 					<div id="GalleryContent">
 					<br/>
 						<div className="GridItems">

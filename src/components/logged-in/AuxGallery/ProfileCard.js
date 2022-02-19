@@ -110,11 +110,6 @@ class ProfileCard extends Component
 
 	render()
 	{
-		//Route gaurding
-		const { uid } = this.props;
-		console.log(this.props);
-		if (!uid) return <Redirect to='/login'/>
-		
 		// The User's bio
 		const bio = this.props.profile.bio ? this.props.profile.bio : "No Bio";
 		const profession = this.props.profile.profession ? this.props.profile.profession.stringValue : "Not Artist";

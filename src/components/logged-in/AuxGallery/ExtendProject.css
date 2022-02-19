@@ -7,62 +7,73 @@
 
 .ExtGalleryContent {
     margin-bottom: 720px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
 .extProjPost {
-    width: 99%; 
+    width: 50vw; 
     margin-left: 2px;
-    margin-top: 75px;
+    margin-top: 35px;
 }
   
   /* Media Queries */
   @media screen and (max-width: 320px) {
     .ExtGalleryContent {
+      margin-top: 15px;
       margin-bottom: 720px;
     } 
   }
-  
-  @media screen and (max-height: 640px) {
+
+  @media screen and (max-width: 400px) {
     .ExtGalleryContent {
-      margin-bottom: 660px;
-    } 
+      margin-top: 15px;
+      margin-bottom: 370px;
+    }
+
+    .extProjPost{
+      width: 95vw;
+    }
+  }
+
+  @media screen and (min-width: 401px) 
+  {
+    .scrolling-wrapperG
+    {
+      margin-bottom: 0px;
+    }
+    .extProjPost
+    {
+      width: 85vw;
+    }
+
+    .ExtGalleryContent 
+    {
+      margin-top: 15px;
+      margin-bottom: 370px;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .scrolling-wrapperG
+    {
+      margin-bottom: 0px;
+    }
+    .extProjPost
+    {
+      width: 65vw;
+      margin-bottom: 35px;
+    }
+
+    .ExtGalleryContent 
+    {
+      margin-top: 65px;
+      margin-bottom: 370px;
+    }
   }
   
-  @media screen and (height: 667px) {
-    .ExtGalleryContent {
-      margin-bottom: 640px;
-    } 
-  }
   
-  @media screen and (height: 731px) {
-    .ExtGalleryContent {
-      margin-bottom: 572px;
-    } 
-  }
-  
-  @media screen and (height: 736px) {
-    .ExtGalleryContent {
-      margin-bottom: 562px;
-    } 
-  }
-  
-  @media screen and (height: 812px) {
-    .ExtGalleryContent {
-      margin-bottom: 498px;
-    } 
-  }
-  
-  @media screen and (height: 823px) {
-    .ExtGalleryContent {
-      margin-bottom: 480px;
-    } 
-  }
-  
-  @media screen and (height: 1366px) {
-    .ExtGalleryContent {
-      margin-bottom: 40px;
-    } 
-  }
 
 .ExtHead {
     

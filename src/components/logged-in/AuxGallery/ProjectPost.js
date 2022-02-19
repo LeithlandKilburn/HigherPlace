@@ -19,7 +19,8 @@ class ProjectPost extends Component {
 	  {
       super(props);
       this.state = {
-    
+        project: this.props.post,
+        title: this.props.post.projectTitle
       }
     }
 
@@ -32,13 +33,7 @@ class ProjectPost extends Component {
 
     componentDidMount = () => 
     {
-      this.setState({
-        project: this.props.post,
-        title: this.props.post.projectTitle
-      }, () => {
-        console.log("This is being passed to the project posts => ", this.props.post)
-
-        //Retrieving thumbnail image from Firebase storage.
+      //Retrieving thumbnail image from Firebase storage.
         //let thumbRef = `${this.props.post.thumbnail.slice(34)}`;
         console.log(this.state.title);
         firebase.storage().ref(`${this.props.post.thumbnail}`).getDownloadURL().then((url) => {
@@ -52,12 +47,11 @@ class ProjectPost extends Component {
           console.log("The thumbnail did not load");
           
         })
-        })
     }
     
     render() 
     {
-        const { classes } = this.props;
+        console.log(this.state);
 
         return (
             

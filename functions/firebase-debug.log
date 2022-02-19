@@ -1,0 +1,273 @@
+[debug] [2022-01-08T06:19:36.377Z] ----------------------------------------------------------------------
+[debug] [2022-01-08T06:19:36.378Z] Command:       /usr/local/bin/firebase /Users/leithlandjoseph/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase functions:shell
+[debug] [2022-01-08T06:19:36.378Z] CLI Version:   9.22.0
+[debug] [2022-01-08T06:19:36.378Z] Platform:      darwin
+[debug] [2022-01-08T06:19:36.378Z] Node Version:  v12.18.1
+[debug] [2022-01-08T06:19:36.379Z] Time:          Sat Jan 08 2022 01:19:36 GMT-0500 (Eastern Standard Time)
+[debug] [2022-01-08T06:19:36.379Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-01-08T06:19:36.383Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2022-01-08T06:19:36.433Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-01-08T06:19:36.434Z] > authorizing via signed-in user (leithland@higherplace.co)
+[debug] [2022-01-08T06:19:36.434Z] [iam] checking project higherplace-d3623 for permissions ["firebase.projects.get"]
+[debug] [2022-01-08T06:19:36.437Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2022-01-08T06:19:36.438Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-01-08T06:19:36.607Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Sat, 08 Jan 2022 06:19:36 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-01-08T06:19:36.654Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/higherplace-d3623:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2022-01-08T06:19:36.662Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2022-01-08T06:19:36.662Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2022-01-08T06:19:36.930Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 08 Jan 2022 06:19:36 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=126","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[warn] ⚠  Your requested "node" version "14" doesn't match your global version "12" {"metadata":{"emulator":{"name":"functions"},"message":"Your requested \"node\" version \"14\" doesn't match your global version \"12\""}}
+[debug] [2022-01-08T06:19:36.983Z] defaultcredentials: writing to file /Users/leithlandjoseph/.config/firebase/leithland_higherplace_co_application_default_credentials.json
+[debug] [2022-01-08T06:19:36.985Z] DEBUG: Setting GAC to /Users/leithlandjoseph/.config/firebase/leithland_higherplace_co_application_default_credentials.json
+[debug] [2022-01-08T06:19:36.986Z] > refreshing access token with scopes: []
+[debug] [2022-01-08T06:19:36.986Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-01-08T06:19:37.132Z] <<< HTTP RESPONSE 200 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Sat, 08 Jan 2022 06:19:37 GMT","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-01-08T06:19:37.188Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/higherplace-d3623/adminSdkConfig [none]
+[debug] [2022-01-08T06:19:37.594Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/higherplace-d3623/adminSdkConfig 200
+[debug] [2022-01-08T06:19:37.594Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/higherplace-d3623/adminSdkConfig {"projectId":"higherplace-d3623","databaseURL":"https://higherplace-d3623.firebaseio.com","storageBucket":"higherplace-d3623.appspot.com","locationId":"us-central"}
+[debug] [2022-01-08T06:19:37.635Z] [functions] Watching "/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions" for Cloud Functions...
+[debug] [2022-01-08T06:19:37.661Z] DEBUG: [worker-pool] addWorker(~diagnostic~)
+[debug] [2022-01-08T06:19:37.662Z] DEBUG: [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2022-01-08T06:19:37.662Z] DEBUG: [worker-pool] submitWork(triggerId=)
+[debug] [2022-01-08T06:19:37.663Z] DEBUG: [worker-~diagnostic~-99338de8-d321-4ef3-806d-76138be8626b]: Assigning socketPath: /var/folders/xl/qz1sbd6j5zq9ybqkwvzb7zk40000gn/T/fire_emu_91241.sock
+[debug] [2022-01-08T06:19:37.663Z] DEBUG: [worker-~diagnostic~-99338de8-d321-4ef3-806d-76138be8626b]: BUSY
+[debug] [2022-01-08T06:19:37.816Z] DEBUG: [runtime-status] [91241] Functions runtime initialized. {"cwd":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions","node_version":"12.18.1"}
+[debug] [2022-01-08T06:19:37.816Z] DEBUG: [runtime-status] [91241] Disabled runtime features: undefined
+[debug] [2022-01-08T06:19:37.818Z] DEBUG: [runtime-status] [91241] Resolved module firebase-admin {"declared":true,"installed":true,"version":"9.12.0","resolution":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2022-01-08T06:19:37.818Z] DEBUG: [runtime-status] [91241] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.16.0","resolution":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2022-01-08T06:19:37.819Z] DEBUG: [runtime-status] [91241] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}]
+[debug] [2022-01-08T06:19:37.820Z] DEBUG: [runtime-status] [91241] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.16.0","resolution":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2022-01-08T06:19:37.853Z] DEBUG: [runtime-status] [91241] Checked functions.config() {"config":{}}
+[debug] [2022-01-08T06:19:37.853Z] DEBUG: [runtime-status] [91241] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.16.0","resolution":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/node_modules/firebase-functions/lib/index.js"}}
+[debug] [2022-01-08T06:19:37.853Z] DEBUG: [runtime-status] [91241] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.16.0","resolution":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2022-01-08T06:19:37.853Z] DEBUG: [runtime-status] [91241] Resolved module firebase-admin {"declared":true,"installed":true,"version":"9.12.0","resolution":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2022-01-08T06:19:37.854Z] DEBUG: [runtime-status] [91241] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.16.0","resolution":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2022-01-08T06:19:37.854Z] DEBUG: [runtime-status] [91241] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"9.12.0","resolution":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/node_modules/firebase-admin/lib/index.js"}}
+[debug] [2022-01-08T06:19:37.855Z] DEBUG: [runtime-status] [91241] initializeApp(DEFAULT) {"storageBucket":"higherplace-d3623.appspot.com","databaseURL":"https://higherplace-d3623.firebaseio.com","projectId":"higherplace-d3623"}
+[warn] ⚠  functions: The Cloud Firestore emulator is not running, so calls to Firestore will affect production. {"metadata":{"emulator":{"name":"functions"},"message":"The Cloud Firestore emulator is not running, so calls to Firestore will affect production."}}
+[warn] ⚠  Error: Cannot find module 'express.js'
+Require stack:
+- /Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/index.js
+- /Users/leithlandjoseph/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js
+1) If you want to compile the package/file into executable, please pay attention to compilation warnings and specify a literal in 'require' call. 2) If you don't want to compile the package/file into executable and want to 'require' it from filesystem (likely plugin), specify an absolute path in 'require' call using process.cwd() or process.execPath.
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:964:15)
+    at Function._resolveFilename (pkg/prelude/bootstrap.js:1459:46)
+    at Function.Module._load (internal/modules/cjs/loader.js:840:27)
+    at Module.require (internal/modules/cjs/loader.js:1024:19)
+    at Module.require (pkg/prelude/bootstrap.js:1338:31)
+    at require (internal/modules/cjs/helpers.js:72:18)
+    at Object.<anonymous> (/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/index.js:5:13)
+    at Module._compile (internal/modules/cjs/loader.js:1136:30)
+    at Module._compile (pkg/prelude/bootstrap.js:1394:32)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1156:10) {"metadata":{"emulator":{"name":"functions"},"message":"Error: Cannot find module 'express.js'\nRequire stack:\n- /Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/index.js\n- /Users/leithlandjoseph/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js\n1) If you want to compile the package/file into executable, please pay attention to compilation warnings and specify a literal in 'require' call. 2) If you don't want to compile the package/file into executable and want to 'require' it from filesystem (likely plugin), specify an absolute path in 'require' call using process.cwd() or process.execPath.\n    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:964:15)\n    at Function._resolveFilename (pkg/prelude/bootstrap.js:1459:46)\n    at Function.Module._load (internal/modules/cjs/loader.js:840:27)\n    at Module.require (internal/modules/cjs/loader.js:1024:19)\n    at Module.require (pkg/prelude/bootstrap.js:1338:31)\n    at require (internal/modules/cjs/helpers.js:72:18)\n    at Object.<anonymous> (/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/index.js:5:13)\n    at Module._compile (internal/modules/cjs/loader.js:1136:30)\n    at Module._compile (pkg/prelude/bootstrap.js:1394:32)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1156:10)"}}
+[warn] ⚠  We were unable to load your functions code. (see above) {"metadata":{"emulator":{"name":"functions"}}}
+[debug] [2022-01-08T06:19:37.891Z] DEBUG: [worker-~diagnostic~-99338de8-d321-4ef3-806d-76138be8626b]: exited
+[debug] [2022-01-08T06:19:37.891Z] DEBUG: [worker-~diagnostic~-99338de8-d321-4ef3-806d-76138be8626b]: FINISHED
+[debug] [2022-01-08T06:19:48.177Z] DEBUG: File /Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/index.js changed, reloading triggers
+[debug] [2022-01-08T06:19:49.179Z] DEBUG: [worker-pool] Cleaned up workers for ~diagnostic~: 1 --> 0
+[debug] [2022-01-08T06:19:49.189Z] DEBUG: [worker-pool] addWorker(~diagnostic~)
+[debug] [2022-01-08T06:19:49.190Z] DEBUG: [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2022-01-08T06:19:49.190Z] DEBUG: [worker-pool] submitWork(triggerId=)
+[debug] [2022-01-08T06:19:49.190Z] DEBUG: [worker-~diagnostic~-b757ffac-a2f8-45ca-90dc-c5058aee2cef]: Assigning socketPath: /var/folders/xl/qz1sbd6j5zq9ybqkwvzb7zk40000gn/T/fire_emu_91249.sock
+[debug] [2022-01-08T06:19:49.190Z] DEBUG: [worker-~diagnostic~-b757ffac-a2f8-45ca-90dc-c5058aee2cef]: BUSY
+[debug] [2022-01-08T06:19:49.347Z] DEBUG: [runtime-status] [91249] Functions runtime initialized. {"cwd":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions","node_version":"12.18.1"}
+[debug] [2022-01-08T06:19:49.347Z] DEBUG: [runtime-status] [91249] Disabled runtime features: undefined
+[debug] [2022-01-08T06:19:49.349Z] DEBUG: [runtime-status] [91249] Resolved module firebase-admin {"declared":true,"installed":true,"version":"9.12.0","resolution":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2022-01-08T06:19:49.350Z] DEBUG: [runtime-status] [91249] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.16.0","resolution":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2022-01-08T06:19:49.351Z] DEBUG: [runtime-status] [91249] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}]
+[debug] [2022-01-08T06:19:49.352Z] DEBUG: [runtime-status] [91249] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.16.0","resolution":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2022-01-08T06:19:49.375Z] DEBUG: [runtime-status] [91249] Checked functions.config() {"config":{}}
+[debug] [2022-01-08T06:19:49.375Z] DEBUG: [runtime-status] [91249] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.16.0","resolution":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/node_modules/firebase-functions/lib/index.js"}}
+[debug] [2022-01-08T06:19:49.376Z] DEBUG: [runtime-status] [91249] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.16.0","resolution":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2022-01-08T06:19:49.376Z] DEBUG: [runtime-status] [91249] Resolved module firebase-admin {"declared":true,"installed":true,"version":"9.12.0","resolution":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2022-01-08T06:19:49.376Z] DEBUG: [runtime-status] [91249] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.16.0","resolution":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2022-01-08T06:19:49.377Z] DEBUG: [runtime-status] [91249] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"9.12.0","resolution":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/node_modules/firebase-admin/lib/index.js"}}
+[debug] [2022-01-08T06:19:49.378Z] DEBUG: [runtime-status] [91249] initializeApp(DEFAULT) {"storageBucket":"higherplace-d3623.appspot.com","databaseURL":"https://higherplace-d3623.firebaseio.com","projectId":"higherplace-d3623"}
+[warn] ⚠  Error: Cannot find module 'express.js'
+Require stack:
+- /Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/index.js
+- /Users/leithlandjoseph/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js
+1) If you want to compile the package/file into executable, please pay attention to compilation warnings and specify a literal in 'require' call. 2) If you don't want to compile the package/file into executable and want to 'require' it from filesystem (likely plugin), specify an absolute path in 'require' call using process.cwd() or process.execPath.
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:964:15)
+    at Function._resolveFilename (pkg/prelude/bootstrap.js:1459:46)
+    at Function.Module._load (internal/modules/cjs/loader.js:840:27)
+    at Module.require (internal/modules/cjs/loader.js:1024:19)
+    at Module.require (pkg/prelude/bootstrap.js:1338:31)
+    at require (internal/modules/cjs/helpers.js:72:18)
+    at Object.<anonymous> (/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/index.js:5:13)
+    at Module._compile (internal/modules/cjs/loader.js:1136:30)
+    at Module._compile (pkg/prelude/bootstrap.js:1394:32)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1156:10) {"metadata":{"emulator":{"name":"functions"},"message":"Error: Cannot find module 'express.js'\nRequire stack:\n- /Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/index.js\n- /Users/leithlandjoseph/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js\n1) If you want to compile the package/file into executable, please pay attention to compilation warnings and specify a literal in 'require' call. 2) If you don't want to compile the package/file into executable and want to 'require' it from filesystem (likely plugin), specify an absolute path in 'require' call using process.cwd() or process.execPath.\n    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:964:15)\n    at Function._resolveFilename (pkg/prelude/bootstrap.js:1459:46)\n    at Function.Module._load (internal/modules/cjs/loader.js:840:27)\n    at Module.require (internal/modules/cjs/loader.js:1024:19)\n    at Module.require (pkg/prelude/bootstrap.js:1338:31)\n    at require (internal/modules/cjs/helpers.js:72:18)\n    at Object.<anonymous> (/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/index.js:5:13)\n    at Module._compile (internal/modules/cjs/loader.js:1136:30)\n    at Module._compile (pkg/prelude/bootstrap.js:1394:32)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1156:10)"}}
+[warn] ⚠  We were unable to load your functions code. (see above) {"metadata":{"emulator":{"name":"functions"}}}
+[debug] [2022-01-08T06:19:49.410Z] DEBUG: [worker-~diagnostic~-b757ffac-a2f8-45ca-90dc-c5058aee2cef]: exited
+[debug] [2022-01-08T06:19:49.410Z] DEBUG: [worker-~diagnostic~-b757ffac-a2f8-45ca-90dc-c5058aee2cef]: FINISHED
+[debug] [2022-01-08T06:20:14.017Z] DEBUG: File /Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/index.js changed, reloading triggers
+[debug] [2022-01-08T06:20:15.021Z] DEBUG: [worker-pool] Cleaned up workers for ~diagnostic~: 1 --> 0
+[debug] [2022-01-08T06:20:15.057Z] DEBUG: [worker-pool] addWorker(~diagnostic~)
+[debug] [2022-01-08T06:20:15.058Z] DEBUG: [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2022-01-08T06:20:15.058Z] DEBUG: [worker-pool] submitWork(triggerId=)
+[debug] [2022-01-08T06:20:15.058Z] DEBUG: [worker-~diagnostic~-ee3e4590-15dc-499a-a58c-3c40591e48a8]: Assigning socketPath: /var/folders/xl/qz1sbd6j5zq9ybqkwvzb7zk40000gn/T/fire_emu_91292.sock
+[debug] [2022-01-08T06:20:15.058Z] DEBUG: [worker-~diagnostic~-ee3e4590-15dc-499a-a58c-3c40591e48a8]: BUSY
+[debug] [2022-01-08T06:20:15.230Z] DEBUG: [runtime-status] [91292] Functions runtime initialized. {"cwd":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions","node_version":"12.18.1"}
+[debug] [2022-01-08T06:20:15.231Z] DEBUG: [runtime-status] [91292] Disabled runtime features: undefined
+[debug] [2022-01-08T06:20:15.233Z] DEBUG: [runtime-status] [91292] Resolved module firebase-admin {"declared":true,"installed":true,"version":"9.12.0","resolution":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2022-01-08T06:20:15.234Z] DEBUG: [runtime-status] [91292] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.16.0","resolution":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2022-01-08T06:20:15.235Z] DEBUG: [runtime-status] [91292] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}]
+[debug] [2022-01-08T06:20:15.236Z] DEBUG: [runtime-status] [91292] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.16.0","resolution":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2022-01-08T06:20:15.265Z] DEBUG: [runtime-status] [91292] Checked functions.config() {"config":{}}
+[debug] [2022-01-08T06:20:15.265Z] DEBUG: [runtime-status] [91292] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.16.0","resolution":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/node_modules/firebase-functions/lib/index.js"}}
+[debug] [2022-01-08T06:20:15.266Z] DEBUG: [runtime-status] [91292] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.16.0","resolution":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2022-01-08T06:20:15.266Z] DEBUG: [runtime-status] [91292] Resolved module firebase-admin {"declared":true,"installed":true,"version":"9.12.0","resolution":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2022-01-08T06:20:15.266Z] DEBUG: [runtime-status] [91292] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.16.0","resolution":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2022-01-08T06:20:15.266Z] DEBUG: [runtime-status] [91292] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"9.12.0","resolution":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/node_modules/firebase-admin/lib/index.js"}}
+[debug] [2022-01-08T06:20:15.267Z] DEBUG: [runtime-status] [91292] initializeApp(DEFAULT) {"storageBucket":"higherplace-d3623.appspot.com","databaseURL":"https://higherplace-d3623.firebaseio.com","projectId":"higherplace-d3623"}
+[warn] ⚠  Error: Cannot find module 'express.js'
+Require stack:
+- /Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/index.js
+- /Users/leithlandjoseph/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js
+1) If you want to compile the package/file into executable, please pay attention to compilation warnings and specify a literal in 'require' call. 2) If you don't want to compile the package/file into executable and want to 'require' it from filesystem (likely plugin), specify an absolute path in 'require' call using process.cwd() or process.execPath.
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:964:15)
+    at Function._resolveFilename (pkg/prelude/bootstrap.js:1459:46)
+    at Function.Module._load (internal/modules/cjs/loader.js:840:27)
+    at Module.require (internal/modules/cjs/loader.js:1024:19)
+    at Module.require (pkg/prelude/bootstrap.js:1338:31)
+    at require (internal/modules/cjs/helpers.js:72:18)
+    at Object.<anonymous> (/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/index.js:5:13)
+    at Module._compile (internal/modules/cjs/loader.js:1136:30)
+    at Module._compile (pkg/prelude/bootstrap.js:1394:32)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1156:10) {"metadata":{"emulator":{"name":"functions"},"message":"Error: Cannot find module 'express.js'\nRequire stack:\n- /Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/index.js\n- /Users/leithlandjoseph/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js\n1) If you want to compile the package/file into executable, please pay attention to compilation warnings and specify a literal in 'require' call. 2) If you don't want to compile the package/file into executable and want to 'require' it from filesystem (likely plugin), specify an absolute path in 'require' call using process.cwd() or process.execPath.\n    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:964:15)\n    at Function._resolveFilename (pkg/prelude/bootstrap.js:1459:46)\n    at Function.Module._load (internal/modules/cjs/loader.js:840:27)\n    at Module.require (internal/modules/cjs/loader.js:1024:19)\n    at Module.require (pkg/prelude/bootstrap.js:1338:31)\n    at require (internal/modules/cjs/helpers.js:72:18)\n    at Object.<anonymous> (/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/index.js:5:13)\n    at Module._compile (internal/modules/cjs/loader.js:1136:30)\n    at Module._compile (pkg/prelude/bootstrap.js:1394:32)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1156:10)"}}
+[warn] ⚠  We were unable to load your functions code. (see above) {"metadata":{"emulator":{"name":"functions"}}}
+[debug] [2022-01-08T06:20:15.301Z] DEBUG: [worker-~diagnostic~-ee3e4590-15dc-499a-a58c-3c40591e48a8]: exited
+[debug] [2022-01-08T06:20:15.301Z] DEBUG: [worker-~diagnostic~-ee3e4590-15dc-499a-a58c-3c40591e48a8]: FINISHED
+[debug] [2022-01-08T06:21:04.326Z] DEBUG: File /Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/index.js changed, reloading triggers
+[debug] [2022-01-08T06:21:05.328Z] DEBUG: [worker-pool] Cleaned up workers for ~diagnostic~: 1 --> 0
+[debug] [2022-01-08T06:21:05.339Z] DEBUG: [worker-pool] addWorker(~diagnostic~)
+[debug] [2022-01-08T06:21:05.339Z] DEBUG: [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2022-01-08T06:21:05.339Z] DEBUG: [worker-pool] submitWork(triggerId=)
+[debug] [2022-01-08T06:21:05.339Z] DEBUG: [worker-~diagnostic~-8bc631dd-716c-4f95-a9cd-95968934508e]: Assigning socketPath: /var/folders/xl/qz1sbd6j5zq9ybqkwvzb7zk40000gn/T/fire_emu_91299.sock
+[debug] [2022-01-08T06:21:05.339Z] DEBUG: [worker-~diagnostic~-8bc631dd-716c-4f95-a9cd-95968934508e]: BUSY
+[debug] [2022-01-08T06:21:05.517Z] DEBUG: [runtime-status] [91299] Functions runtime initialized. {"cwd":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions","node_version":"12.18.1"}
+[debug] [2022-01-08T06:21:05.518Z] DEBUG: [runtime-status] [91299] Disabled runtime features: undefined
+[debug] [2022-01-08T06:21:05.519Z] DEBUG: [runtime-status] [91299] Resolved module firebase-admin {"declared":true,"installed":true,"version":"9.12.0","resolution":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2022-01-08T06:21:05.521Z] DEBUG: [runtime-status] [91299] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.16.0","resolution":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2022-01-08T06:21:05.522Z] DEBUG: [runtime-status] [91299] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}]
+[debug] [2022-01-08T06:21:05.522Z] DEBUG: [runtime-status] [91299] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.16.0","resolution":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2022-01-08T06:21:05.554Z] DEBUG: [runtime-status] [91299] Checked functions.config() {"config":{}}
+[debug] [2022-01-08T06:21:05.554Z] DEBUG: [runtime-status] [91299] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.16.0","resolution":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/node_modules/firebase-functions/lib/index.js"}}
+[debug] [2022-01-08T06:21:05.554Z] DEBUG: [runtime-status] [91299] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.16.0","resolution":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2022-01-08T06:21:05.555Z] DEBUG: [runtime-status] [91299] Resolved module firebase-admin {"declared":true,"installed":true,"version":"9.12.0","resolution":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2022-01-08T06:21:05.555Z] DEBUG: [runtime-status] [91299] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.16.0","resolution":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2022-01-08T06:21:05.555Z] DEBUG: [runtime-status] [91299] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"9.12.0","resolution":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/node_modules/firebase-admin/lib/index.js"}}
+[debug] [2022-01-08T06:21:05.556Z] DEBUG: [runtime-status] [91299] initializeApp(DEFAULT) {"storageBucket":"higherplace-d3623.appspot.com","databaseURL":"https://higherplace-d3623.firebaseio.com","projectId":"higherplace-d3623"}
+[debug] [2022-01-08T06:21:05.640Z] [functions[us-central1-createStripe]] function ignored because the firestore emulator does not exist or is not running.
+[debug] [2022-01-08T06:21:05.641Z] DEBUG: [worker-~diagnostic~-8bc631dd-716c-4f95-a9cd-95968934508e]: IDLE
+[debug] [2022-01-08T06:21:24.330Z] DEBUG: File /Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/index.js changed, reloading triggers
+[debug] [2022-01-08T06:21:25.331Z] DEBUG: [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2022-01-08T06:21:25.331Z] DEBUG: [worker-~diagnostic~-8bc631dd-716c-4f95-a9cd-95968934508e]: FINISHING
+[debug] [2022-01-08T06:21:25.342Z] DEBUG: [worker-pool] addWorker(~diagnostic~)
+[debug] [2022-01-08T06:21:25.342Z] DEBUG: [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2022-01-08T06:21:25.342Z] DEBUG: [worker-pool] submitWork(triggerId=)
+[debug] [2022-01-08T06:21:25.343Z] DEBUG: [worker-~diagnostic~-45bbbc07-6537-4eae-ad30-02c31e3f25a8]: Assigning socketPath: /var/folders/xl/qz1sbd6j5zq9ybqkwvzb7zk40000gn/T/fire_emu_91300.sock
+[debug] [2022-01-08T06:21:25.343Z] DEBUG: [worker-~diagnostic~-45bbbc07-6537-4eae-ad30-02c31e3f25a8]: BUSY
+[debug] [2022-01-08T06:21:25.343Z] DEBUG: [worker-~diagnostic~-8bc631dd-716c-4f95-a9cd-95968934508e]: exited
+[debug] [2022-01-08T06:21:25.343Z] DEBUG: [worker-~diagnostic~-8bc631dd-716c-4f95-a9cd-95968934508e]: FINISHED
+[debug] [2022-01-08T06:21:25.519Z] DEBUG: [runtime-status] [91300] Functions runtime initialized. {"cwd":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions","node_version":"12.18.1"}
+[debug] [2022-01-08T06:21:25.520Z] DEBUG: [runtime-status] [91300] Disabled runtime features: undefined
+[debug] [2022-01-08T06:21:25.522Z] DEBUG: [runtime-status] [91300] Resolved module firebase-admin {"declared":true,"installed":true,"version":"9.12.0","resolution":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2022-01-08T06:21:25.524Z] DEBUG: [runtime-status] [91300] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.16.0","resolution":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2022-01-08T06:21:25.525Z] DEBUG: [runtime-status] [91300] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}]
+[debug] [2022-01-08T06:21:25.526Z] DEBUG: [runtime-status] [91300] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.16.0","resolution":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2022-01-08T06:21:25.553Z] DEBUG: [runtime-status] [91300] Checked functions.config() {"config":{}}
+[debug] [2022-01-08T06:21:25.554Z] DEBUG: [runtime-status] [91300] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.16.0","resolution":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/node_modules/firebase-functions/lib/index.js"}}
+[debug] [2022-01-08T06:21:25.554Z] DEBUG: [runtime-status] [91300] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.16.0","resolution":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2022-01-08T06:21:25.554Z] DEBUG: [runtime-status] [91300] Resolved module firebase-admin {"declared":true,"installed":true,"version":"9.12.0","resolution":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2022-01-08T06:21:25.555Z] DEBUG: [runtime-status] [91300] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.16.0","resolution":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2022-01-08T06:21:25.555Z] DEBUG: [runtime-status] [91300] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"9.12.0","resolution":"/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions/node_modules/firebase-admin/lib/index.js"}}
+[debug] [2022-01-08T06:21:25.555Z] DEBUG: [runtime-status] [91300] initializeApp(DEFAULT) {"storageBucket":"higherplace-d3623.appspot.com","databaseURL":"https://higherplace-d3623.firebaseio.com","projectId":"higherplace-d3623"}
+[debug] [2022-01-08T06:21:25.612Z] DEBUG: [worker-~diagnostic~-45bbbc07-6537-4eae-ad30-02c31e3f25a8]: IDLE
+[debug] [2022-01-08T06:53:30.052Z] ----------------------------------------------------------------------
+[debug] [2022-01-08T06:53:30.053Z] Command:       /usr/local/bin/firebase /Users/leithlandjoseph/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase functions:shell
+[debug] [2022-01-08T06:53:30.053Z] CLI Version:   9.22.0
+[debug] [2022-01-08T06:53:30.053Z] Platform:      darwin
+[debug] [2022-01-08T06:53:30.053Z] Node Version:  v12.18.1
+[debug] [2022-01-08T06:53:30.054Z] Time:          Sat Jan 08 2022 01:53:30 GMT-0500 (Eastern Standard Time)
+[debug] [2022-01-08T06:53:30.054Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-01-08T06:53:30.097Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-01-08T06:53:30.097Z] > authorizing via signed-in user (leithland@higherplace.co)
+[debug] [2022-01-08T06:53:30.097Z] [iam] checking project higherplace-d3623 for permissions ["firebase.projects.get"]
+[debug] [2022-01-08T06:53:30.099Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2022-01-08T06:53:30.099Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-01-08T06:53:30.259Z] <<< HTTP RESPONSE 200 {"date":"Sat, 08 Jan 2022 06:53:30 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-01-08T06:53:30.304Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/higherplace-d3623:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2022-01-08T06:53:30.580Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 08 Jan 2022 06:53:30 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=127","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[warn] ⚠  Your requested "node" version "14" doesn't match your global version "12" {"metadata":{"emulator":{"name":"functions"},"message":"Your requested \"node\" version \"14\" doesn't match your global version \"12\""}}
+[debug] [2022-01-08T06:53:30.618Z] defaultcredentials: writing to file /Users/leithlandjoseph/.config/firebase/leithland_higherplace_co_application_default_credentials.json
+[debug] [2022-01-08T06:53:30.621Z] DEBUG: Setting GAC to /Users/leithlandjoseph/.config/firebase/leithland_higherplace_co_application_default_credentials.json
+[debug] [2022-01-08T06:53:30.623Z] > refreshing access token with scopes: []
+[debug] [2022-01-08T06:53:30.624Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-01-08T06:53:30.753Z] <<< HTTP RESPONSE 200 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Sat, 08 Jan 2022 06:53:30 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-01-08T06:53:30.799Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/higherplace-d3623/adminSdkConfig [none]
+[debug] [2022-01-08T06:53:31.197Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/higherplace-d3623/adminSdkConfig 200
+[debug] [2022-01-08T06:53:31.198Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/higherplace-d3623/adminSdkConfig {"projectId":"higherplace-d3623","databaseURL":"https://higherplace-d3623.firebaseio.com","storageBucket":"higherplace-d3623.appspot.com","locationId":"us-central"}
+[debug] [2022-01-08T06:53:31.234Z] [functions] Watching "/Users/leithlandjoseph/Desktop/HigherPlace/HigherPlace-final-merged/functions" for Cloud Functions...
+[debug] [2022-01-08T06:53:31.259Z] DEBUG: [worker-pool] addWorker(~diagnostic~)
+[debug] [2022-01-08T06:53:31.260Z] DEBUG: [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2022-01-08T06:53:31.260Z] DEBUG: [worker-pool] submitWork(triggerId=)
+[debug] [2022-01-08T06:53:31.261Z] DEBUG: [worker-~diagnostic~-262ed85f-e196-4460-b312-fd09c581069a]: Assigning socketPath: /var/folders/xl/qz1sbd6j5zq9ybqkwvzb7zk40000gn/T/fire_emu_91555.sock
+[debug] [2022-01-08T06:53:31.261Z] DEBUG: [worker-~diagnostic~-262ed85f-e196-4460-b312-fd09c581069a]: BUSY
+[debug] [2022-01-09T23:24:00.601Z] ----------------------------------------------------------------------
+[debug] [2022-01-09T23:24:00.603Z] Command:       /usr/local/bin/firebase /Users/leithlandjoseph/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy
+[debug] [2022-01-09T23:24:00.603Z] CLI Version:   9.22.0
+[debug] [2022-01-09T23:24:00.603Z] Platform:      darwin
+[debug] [2022-01-09T23:24:00.603Z] Node Version:  v12.18.1
+[debug] [2022-01-09T23:24:00.606Z] Time:          Sun Jan 09 2022 18:24:00 GMT-0500 (Eastern Standard Time)
+[debug] [2022-01-09T23:24:00.606Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-01-09T23:24:00.611Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2022-01-09T23:24:00.675Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-01-09T23:24:00.676Z] > authorizing via signed-in user (leithland@higherplace.co)
+[debug] [2022-01-09T23:24:00.676Z] [iam] checking project higherplace-d3623 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-01-09T23:24:00.678Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2022-01-09T23:24:00.678Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-01-09T23:24:00.855Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","date":"Sun, 09 Jan 2022 23:24:00 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-01-09T23:24:00.906Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/higherplace-d3623:testIamPermissions  
+ {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-01-09T23:24:00.911Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2022-01-09T23:24:00.911Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2022-01-09T23:24:01.191Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 09 Jan 2022 23:24:01 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=135","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-01-09T23:24:01.194Z] >>> HTTP REQUEST POST https://iam.googleapis.com/v1/projects/higherplace-d3623/serviceAccounts/higherplace-d3623@appspot.gserviceaccount.com:testIamPermissions  
+ {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2022-01-09T23:24:01.424Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 09 Jan 2022 23:24:01 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-01-09T23:24:01.426Z] > refreshing access token with scopes: []
+[debug] [2022-01-09T23:24:01.426Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-01-09T23:24:01.567Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Sun, 09 Jan 2022 23:24:01 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-01-09T23:24:01.612Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/higherplace-d3623 [none]
+[debug] [2022-01-09T23:24:02.056Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/higherplace-d3623 200
+[debug] [2022-01-09T23:24:02.056Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/higherplace-d3623 {"projectId":"higherplace-d3623","projectNumber":"922698813513","displayName":"HigherPlace","name":"projects/higherplace-d3623","resources":{"hostingSite":"higherplace-d3623","realtimeDatabaseInstance":"higherplace-d3623","storageBucket":"higherplace-d3623.appspot.com","locationId":"us-central"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'higherplace-d3623'...
+[info] 
+[info] i  deploying firestore, functions, hosting 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
+[info] ✔  functions: Finished running predeploy script. 
+[info] i  firestore: reading indexes from firestore.indexes.json... 
+[info] i  cloud.firestore: checking firestore.rules for compilation errors... 
+[debug] [2022-01-09T23:24:04.052Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2022-01-09T23:24:04.052Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-01-09T23:24:04.196Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Sun, 09 Jan 2022 23:24:04 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-01-09T23:24:04.238Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/higherplace-d3623:test  
+ {"source":{"files":[{"name":"firestore.rules","content":"service cloud.firestore {\n  match /databases/{database}/documents {\n    match /{document=**} {\n      allow read, write;\n    }\n  }\n}"}]}}
+[debug] [2022-01-09T23:24:04.558Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 09 Jan 2022 23:24:04 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[warn] ⚠  [W] undefined:undefined - Ruleset uses old version (version [1]). Please update to the latest version (version [2]). 
+[info] ✔  cloud.firestore: rules file firestore.rules compiled successfully 

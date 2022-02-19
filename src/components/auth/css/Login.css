@@ -14,18 +14,29 @@
     font-size: 16px;
 }
 
-.ArtistInfo
+.ArtistInfo2
 {
-    margin: 0px 10px 0px 5px;
-    margin-bottom: 10px;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 1% 0;
+    width: 100%;
+    height: fit-content;
 }
 
 .proSelect
 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 30vh;
+    overflow-y: auto;
+}
+
+.proDrop
+{
     display: block;
     border: solid 1px #555;
+    margin-bottom: 10px;
 }
 
 .proSelect:first-of-type
@@ -33,7 +44,84 @@
     margin-bottom: 10px;
 }
 
-.styleSelText
+.affinityButton
+{
+    flex-basis: 22%;
+    background-image: linear-gradient(to right, rgba(230, 210, 100, .9), 
+    rgba(255, 235, 170, .9) 45%,rgba(230, 210, 100, .9));
+    border: solid 2px rgba(130, 120, 0, 1);
+    height: 5vh;
+    font-size: 15px;
+    cursor: pointer;
+    transition: border 25ms;
+    margin-bottom: 5px;
+    width: 24vw;
+}
+
+.affBContainer
+{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    padding: 0 1% 0;
+    width: 100%;
+}
+
+.affBSelect
+{
+    display: flex;
+    flex-shrink: 0;
+    margin-top: 5px;
+    padding: 0 1% 0;
+    overflow: auto;
+    white-space: nowrap;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.ethSelect
+{
+    min-width: 150px;
+    overflow: hidden;
+    margin: 0 2vw;
+}
+
+.affBSelect::-webkit-scrollbar
+{
+    display: none;
+}
+
+.affLSelect
+{
+    display: grid;
+    grid-template-columns: repeat(4, 150px);
+    grid-column-gap: 1vw;
+    grid-template-rows: 1fr 1fr;
+    margin: 0 2vw;
+    overflow: auto;
+    white-space: nowrap;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.affLSelect::-webkit-scrollbar
+{
+    display: none;
+}
+
+
+#RaceDropLOG
+{
+    margin: 0 2vw 0 0;
+}
+
+#RaceDropLOG, #RegionDrop, #ReligionDrop, #LGBTQDrop
 {
     display: inline-block;
+    margin-bottom: 2px;
+}
+
+.GiveCursor
+{
+    cursor: pointer;
 }

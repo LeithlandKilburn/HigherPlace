@@ -7,7 +7,7 @@ import Galleries from './images/bookmark-multiple.svg';
 import Chat from './images/chat.svg';
 import Market from './images/market.svg';
 import HomeIcon from './images/home.svg';
-import NavBar from '../auth/NavBar';
+import NavBar from './NavBar';
 import { connect } from 'react-redux';
 import {Redirect} from 'react-router';
 
@@ -43,26 +43,42 @@ class Toolbar extends React.Component {
   componentDidMount ()
   {
     console.log(this.state.value);
-    if (this.state.value === "") this.props.history.push( "profile" );
+    if (this.props.location.pathname === '' || this.props.location.pathname === '/')
+    {
+      this.setState({ 
+        ...this.state,
+        value: 'home'
+      }, () => {
+        this.props.history.push( "/" + 'home' );
+      });
+    }
   }
 
   render() {
     const { classes } = this.props;
     let { value } = this.state.value;
-
-    // Route gaurding
-    const { auth } = this.props; 
-    if (!auth.uid) return <Redirect to='/login'/>
+    let appFrame;
+    console.log(this.props);
+    if (this.props.location.pathname === '/login' || this.props.location.pathname === '/AccountInfo' || 
+      this.props.location.pathname === '/ArtistSignUp')
+    {
+      appFrame = <div></div>;
+    } else
+    {
+      appFrame = <div>
+                    <NavBar history={this.props.history}/>
+                    <BottomNavigation elevation="12" value={value} onChange={this.handleChange} showLabels className={classes.root}>
+                    <BottomNavigationAction label="Home" value="profile" icon={<img src={HomeIcon}/>} />
+                    <BottomNavigationAction label="Market" id="home" value="home" icon={<img src={Market}/>} />
+                    <BottomNavigationAction label="Galleries" value="galleries" icon={<img src={Galleries}/>} />
+                    <BottomNavigationAction label="Messages" value="messages" icon={<img src={Chat}/>} />
+                    </BottomNavigation>
+                  </div>;
+    }
 
     return (
       <div>
-			<NavBar history={this.props.history}/>
-      <BottomNavigation elevation="12" value={value} onChange={this.handleChange} showLabels className={classes.root}>
-      <BottomNavigationAction label="Home" value="profile" icon={<img src={HomeIcon}/>} />
-      <BottomNavigationAction label="Market" id="home" value="home" icon={<img src={Market}/>} />
-      <BottomNavigationAction label="Galleries" value="galleries" icon={<img src={Galleries}/>} />
-      <BottomNavigationAction label="Messages" value="messages" icon={<img src={Chat}/>} />
-      </BottomNavigation>
+        {appFrame}
       </div>
     );
   }

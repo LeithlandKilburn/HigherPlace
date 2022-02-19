@@ -31,7 +31,7 @@ class ProjUpload extends Component
             keyword4: null,
             keyword5: null,
             keyword6: null,
-            userID: "jhbjhbjhbjh",
+            userID: this.props.auth.uid,
             projectID: "kfdjdjldk",
             timestamp: null
         }
@@ -62,71 +62,10 @@ class ProjUpload extends Component
         });
     }
 
-    fileUpload = () =>
+    uploadNow = async () =>
     {
-        // Upload Selected File.
-        let uuid1 = uuidv1();
-        let refArray = [null, null, null, null, null, null, null];
-
-        let storageRef = firebase.storage().ref(`/projectMedia/${this.state.userID}/${this.state.projectTitle}${uuid1}/${uuidv4()}`);
-        if (this.state.thumbnail != null)
-        {
-            storageRef.put(this.state.thumbnail);
-            refArray[0] = storageRef.location.path;
-        }
-                    
-        let projMedias = [this.state.projectMedia1, this.state.projectMedia2, this.state.projectMedia3, 
-            this.state.projectMedia4, this.state.projectMedia5, this.state.projectMedia6];
-        for (let i = 0; i < 6; i++) 
-        {
-            storageRef = firebase.storage().ref(`/projectMedia/${this.state.userID}/${this.state.projectTitle}${uuid1}/${uuidv4()}`);
-            console.log("Preject media " + (i+1) + "is " + projMedias[i]);
-            if (projMedias[i] === null)
-            {
-                i++;
-            } 
-            else
-            {
-                storageRef.put(projMedias[i]);
-                console.log("Successfuly put " + projMedias[i]);
-
-                // Save reference to the project media to the state to be uplaoded to Firestore.
-                console.log(storageRef);
-                refArray[i + 1] = storageRef.location.path;
-            }
-        }
-
-        //Create projectID
-        let projectID = db.collection("projects").doc().id;
-
-        // Activate the reducer
-        let date = Date.now()
-        let time = firebase.firestore.Timestamp.fromDate(new Date(date));
-        this.setState({
-            ...this.state,
-            thumbnail: refArray[0],
-            projectMedia1: refArray[1],
-            projectMedia2: refArray[2],
-            projectMedia3: refArray[3],
-            projectMedia4: refArray[4],
-            projectMedia5: refArray[5],
-            projectMedia6: refArray[6],
-            userID: this.props.auth.uid,
-            projectID: projectID,
-            timestamp: time,
-        }, () => {
-            console.log(this.state.thumbnail);
-            this.props.createProject(this.state);
-            console.log(this.state);
-            this.props.history.push('/galleries');
-        })
-    }
-
-    componentDidMount = () => {
-        this.setState({
-            ...this.state,
-            userID: this.props.auth.uid
-        })
+        this.props.fileUpload(this.state);
+		this.props.history.push('/galleries');
     }
 
    
@@ -200,7 +139,7 @@ class ProjUpload extends Component
                 </form>
 
                 <div>
-                <button onClick={this.fileUpload}>Upload</button>
+                <button onClick={this.uploadNow}>Upload</button>
                 <br/><br/>
                 <progress value={this.state.uploadValue}/>
                 </div>
@@ -215,7 +154,7 @@ class ProjUpload extends Component
 const mapDispatchToProps = (dispatch) =>
 {
     return{
-        createProject: (project) => dispatch(createProject(project))
+        createProject: (project) => dispatch(createProject(project)),
     }
 }
 

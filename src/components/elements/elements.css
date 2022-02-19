@@ -1,0 +1,49 @@
+/*CHECKBOX CHECKBOX CHECKBOX CHECKBOX CHECKBOX CHECKBOX CHECKBOX CHECKBOX CHECKBOX CHECKBOX CHECKBOX CHECKBOX CHECKBOX
+CHECKBOX CHECKBOX CHECKBOX CHECKBOX CHECKBOX CHECKBOX CHECKBOX CHECKBOX CHECKBOX CHECKBOX CHECKBOX CHECKBOX CHECKBOX*/
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+.styleSelText
+{
+    display: inline-block;
+}
+
+
+/*SELECTBOX SELECTBOX SELECTBOX SELECTBOX SELECTBOX SELECTBOX SELECTBOX SELECTBOX SELECTBOX SELECTBOX SELECTBOX SELECTBOX
+SELECTBOX SELECTBOX SELECTBOX SELECTBOX SELECTBOX SELECTBOX SELECTBOX SELECTBOX SELECTBOX SELECTBOX SELECTBOX SELECTBOX*/
+/*-----------------------------------------------------------------------------------------------------------------------*/
+
+.selectCont
+{
+    background-color: #e0e;
+}
+
+.SBCat
+{
+    background-color: #ccc;
+    margin-bottom: 1vh;
+    padding: 5px;
+    border-radius: 2px;
+}
+
+
+/*COUNTRY SEARCH. COUNTRY SEARCH. COUNTRY SEARCH. COUNTRY SEARCH. COUNTRY SEARCH. COUNTRY SEARCH. COUNTRY SEARCH. COUNTRY SEARCH.
+COUNTRY SEARCH. COUNTRY SEARCH. COUNTRY SEARCH. COUNTRY SEARCH. COUNTRY SEARCH. COUNTRY SEARCH. COUNTRY SEARCH. COUNTRY SEARCH.*/
+/*-----------------------------------------------------------------------------------------------------------------------------*/
+
+.FilterSearch
+{
+    width: fit-content;
+}
+
+.DropList
+{
+    display: inline-block;
+}
+
+.CountryName
+{
+    background-color: #ccc;
+    margin-bottom: 1vh;
+    padding: 5px;
+    border-radius: 2px;
+}

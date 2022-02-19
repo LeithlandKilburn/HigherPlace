@@ -1,6 +1,7 @@
 
 const initState = {
     authError: null,
+    redirectNow: false,
 }
 
 const authReducer = (state = initState, action) => 
@@ -29,10 +30,23 @@ const authReducer = (state = initState, action) =>
             console.log('signup success');
             return {
                 ...state,
+                redirectNow: true,
                 authError: 'success'
             }
         case 'SIGNUP_ERROR':
             console.log("Signup error")
+            return {
+                ...state,
+                authError: action.err.message
+            }
+        case 'RETRY_SUCCESS':
+            console.log("Retry Success")
+            return {
+                ...state,
+                authError: action.err.message
+            }
+        case 'RETRY_ERROR':
+            console.log("Retry error")
             return {
                 ...state,
                 authError: action.err.message

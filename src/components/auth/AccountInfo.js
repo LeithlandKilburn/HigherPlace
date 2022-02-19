@@ -22,7 +22,21 @@ class AccountInfo extends Component
         test: "",
         labelWidth: 0,
       }
-    };
+    }
+
+    componentDidMount = () =>
+    {
+      if (this.props.tempAcc)
+      {
+        this.setState({
+          ...this.state,
+          email: this.props.tempAcc.email,
+          password: this.props.tempAcc.password,
+          username: this.props.tempAcc.username,
+          city: this.props.tempAcc.city,
+        })
+      }
+    }
 
     handleChange = (e) =>
     {
@@ -30,8 +44,9 @@ class AccountInfo extends Component
         {
             ...this.state,
             [e.target.name] : e.target.value 
+        }, () => {
+          console.log(this.state);
         })
-        console.log(this.state); 
     }
 
     handleSubmit = (e) =>
@@ -68,7 +83,7 @@ class AccountInfo extends Component
       });
     }
 
-    buttonFinish = (e) =>
+    buttonFinish = () =>
     {
       this.setState({
         ...this.state,
@@ -81,12 +96,8 @@ class AccountInfo extends Component
 
     buttonContinue = (e) =>
     {
-      this.setState({
-        ...this.state,
-      }, () => {
-        this.props.artCont(this.state);
-        this.props.history.push('/ArtistSignUp');
-      })
+      this.props.artCont(this.state);
+      this.props.history.push('/ArtistSignUp');
       
     }
           
@@ -106,16 +117,16 @@ class AccountInfo extends Component
                 <input type="file" onChange={this.fileSelected} name="profilePic" id="profilePic"/>
                 <form>
                     <label htmlFor="username">Username</label>
-                    <input type="text" name="username" id="username" onChange={this.handleChange} required=""/>
+                    <input type="text" name="username" id="username" value={this.state.username} onChange={this.handleChange} required=""/>
 
                     <label htmlFor="email">Email</label>
-                    <input type="email" name="email"  id="email" onChange={this.handleChange} required/>
+                    <input type="email" name="email"  id="email" value={this.state.email} onChange={this.handleChange} required/>
                     
                     <label htmlFor="password">Password</label>
-                    <input type="text" name="password" id="password" onChange={this.handleChange} required/>
+                    <input type="text" name="password" id="password" value={this.state.password} onChange={this.handleChange} required/>
 
                     <label htmlFor="address">City of Residence</label>
-                    <input type="text" name="city" id="address" onChange={this.handleChange} required/>
+                    <input type="text" name="city" id="address" value={this.state.city} onChange={this.handleChange} required/>
                 </form>
                 </div>
 
@@ -142,7 +153,8 @@ const mapStateToProps = (state) =>
 {
   console.log(state);
 	return {
-		auth: state.firebase.auth
+		auth: state.firebase.auth,
+    tempAcc: state.auth.tempAcc,
   }
 }
 
