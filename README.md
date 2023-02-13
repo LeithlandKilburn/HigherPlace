@@ -2,5 +2,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Tech Desc.
 
-HigherPlace is a fullstack react app using Google Firebase, Firestore and Google Cloud as a backend solution.
+HigherPlace is a fullstack react app using the Stripe API for payments and Google Firebase and Google Cloud as a backend solution.
 
